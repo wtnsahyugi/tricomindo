@@ -20,13 +20,13 @@ define('DIR_ADM', $site['adm']);
 define('DIR_CON', $site['con']);
 define('DIR_INC', $site['inc']);
 
-$db['host'] = "172.21.0.1";
+$db['host'] = "192.168.96.2";
 $db['driver'] = "mysql";
 $db['sock'] = "";
-$db['port'] = "";
+$db['port'] = "3306";
 $db['user'] = "root";
 $db['passwd'] = "test";
-$db['db'] = "tricomindo";
+$db['db'] = "cms_tricomindo";
 
 define('DATABASE_HOST', $db['host']);
 define('DATABASE_DRIVER', $db['driver']);
@@ -37,7 +37,7 @@ define('DATABASE_PASS', $db['passwd']);
 define('DATABASE_NAME', $db['db']);
 
 $site['vqmod'] = FALSE;
-$site['timezone'] = "Pacific/Midway";
+$site['timezone'] = "Asia/Jakarta";
 $site['permalink'] = "slug/post-title";
 $site['slug_permalink'] = "detailpost";
 

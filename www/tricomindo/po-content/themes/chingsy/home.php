@@ -1,25 +1,5 @@
 <?=$this->layout('index');?>
 
-<div class="section header-stick bottommargin-lg clearfix" style="padding: 20px 0;">
-	<div>
-		<div class="container clearfix">
-			<span class="label label-danger bnews-title"><?=$this->e($front_breaking_news);?>:</span>
-			<div class="fslider bnews-slider nobottommargin" data-speed="800" data-pause="6000" data-arrows="false" data-pagi="false">
-				<div class="flexslider">
-					<div class="slider-wrap">
-					<?php
-						$headlines = $this->post()->getHeadline('5', 'DESC', WEB_LANG_ID);
-						foreach($headlines as $headline){
-					?>
-						<div class="slide"><a href="<?=$this->pocore()->call->postring->permalink(rtrim(BASE_URL, '/'), $headline);?>"><strong><?=$headline['title'];?>:</strong> <?=$this->pocore()->call->postring->cuthighlight('post', $headline['content'], '80');?>...</a></div>
-					<?php } ?>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
 <div class="container clearfix">
 	<div class="row">
 		<div class="col-md-8 bottommargin">
