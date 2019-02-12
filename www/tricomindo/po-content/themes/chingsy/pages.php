@@ -18,12 +18,30 @@
 				<div class="col-md-4">
 					<!-- Insert Sidebar -->
 					<?php 
-						if ($this->e($pages['seotitle']) == 'tentang-kami') {
-							$this->insert('sidebar_tentang_kami');
-						} elseif ($this->e($pages['seotitle']) == 'visi-misi') {
-							$this->insert('sidebar_visi_misi');
-						} else {
-							$this->insert('sidebar');
+						switch ($this->e($pages['seotitle'])) {
+							case "tentang-kami":
+								$this->insert('sidebar_tentang_kami');
+								break;
+
+							case "visi-misi":
+								$this->insert('sidebar_visi_misi');
+								break;
+
+							case "organisasi":
+								$this->insert('sidebar_organisasi');
+								break;
+
+							case "studi-kawasan-kelayakan":
+								$this->insert('sidebar_studi_kawasan');
+								break;
+
+							case "perancangan-bangunan":
+								$this->insert('sidebar_perancangan_bangunan');
+								break;
+							
+							default:
+								$this->insert('sidebar');
+								break;
 						}
 					?>
 				</div>

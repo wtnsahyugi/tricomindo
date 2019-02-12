@@ -9,7 +9,7 @@
 				<li><b>Profil Perusahaan</b></li>
 				<li><a href="<?=BASE_URL;?>/pages/tentang-kami">Tentang Kami</a></li>
 				<li><a href="<?=BASE_URL;?>/pages/visi-misi">Visi dan Misi</a></li>
-				<li><a href="<?=BASE_URL;?>/pages/profil-perusahaan">Organisasi</a></li>
+				<li><a href="<?=BASE_URL;?>/pages/organisasi">Organisasi</a></li>
 			</ul>
 		</div>
 	</div>
