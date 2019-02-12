@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : tricomindo
+ Source Server         : mysqlLocal
  Source Server Type    : MySQL
- Source Server Version : 50724
+ Source Server Version : 50725
  Source Host           : localhost:3306
- Source Schema         : tricomindo
+ Source Schema         : cms_tricomindo
 
  Target Server Type    : MySQL
- Target Server Version : 50724
+ Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 12/02/2019 22:30:18
+ Date: 13/02/2019 00:01:49
 */
 
 SET NAMES utf8mb4;
@@ -246,7 +246,7 @@ INSERT INTO `menu` VALUES (47, 45, 'addnew', 'admin.php?mod=user&act=addnew', ''
 INSERT INTO `menu` VALUES (48, 0, 'General', './', '', 1, 2, 'Y', 'none');
 INSERT INTO `menu` VALUES (49, 0, 'Home', './', '', 1, 3, 'Y', 'none');
 INSERT INTO `menu` VALUES (50, 0, 'Portofolio', 'pages/tentang-kami', '', 4, 2, 'Y', 'none');
-INSERT INTO `menu` VALUES (51, 0, 'Layanan', 'pages/kawasan-kelayakan', '', 3, 2, 'Y', 'none');
+INSERT INTO `menu` VALUES (51, 0, 'Layanan', 'pages/studi-kawasan-kelayakan', '', 3, 2, 'Y', 'none');
 INSERT INTO `menu` VALUES (57, 0, 'Kontak', 'contact', '', 6, 2, 'Y', 'none');
 INSERT INTO `menu` VALUES (58, 0, 'About Us', 'pages/tentang-kami', '', 2, 3, 'Y', 'none');
 INSERT INTO `menu` VALUES (59, 58, 'Services', 'pages/layanan', '', 1, 3, 'Y', 'none');
@@ -317,15 +317,16 @@ CREATE TABLE `pages` (
   `picture` varchar(255) NOT NULL,
   `active` enum('Y','N') NOT NULL DEFAULT 'Y',
   PRIMARY KEY (`id_pages`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of pages
 -- ----------------------------
 BEGIN;
-INSERT INTO `pages` VALUES (2, 'kawasan-kelayakan', '', 'Y');
+INSERT INTO `pages` VALUES (2, 'studi-kawasan-kelayakan', '', 'Y');
 INSERT INTO `pages` VALUES (3, 'tentang-kami', '', 'Y');
 INSERT INTO `pages` VALUES (4, 'visi-misi', '', 'Y');
+INSERT INTO `pages` VALUES (5, 'organisasi', '', 'Y');
 COMMIT;
 
 -- ----------------------------
@@ -339,7 +340,7 @@ CREATE TABLE `pages_description` (
   `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
   PRIMARY KEY (`id_pages_description`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of pages_description
@@ -351,6 +352,8 @@ INSERT INTO `pages_description` VALUES (5, 3, 1, 'Profil Perusahaan', '&lt;p&gt;
 INSERT INTO `pages_description` VALUES (6, 3, 2, 'Company Profile', '&lt;p&gt;&lt;strong&gt;TENTANG KAMI&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt; &lt;strong&gt;Cipta&lt;/strong&gt; &lt;strong&gt;Mandiri&lt;/strong&gt; adalah perusahaan swasta nasional yang bergerak di bidang Engineering dan Information Technology, Perusahaan ini didirikan oleh para professional muda yang berkompeten dan berpengalaman dibidang Engineering dan Information Technology.&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt; &lt;strong&gt;Cipta&lt;/strong&gt; &lt;strong&gt;Mandiri&lt;/strong&gt; bukanlah yang pertama dibidang jasa ini, tetapi salah satu perusahaan yang dapat memberikan pelayanan yang terbaik dengan memiliki komitmen untuk menyelesaikan semua proyek tepat waktu dengan kualitas terbaik dan biaya yang pantas demi kepuasan pelanggan. Dengan berbekal pengalaman yang dimiliki selama ini &lt;strong&gt;Tricomindo&lt;/strong&gt; &lt;strong&gt;Cipta&lt;/strong&gt; &lt;strong&gt;Mandiri&lt;/strong&gt; tetap konsisten untuk melaksanakan kegiatan dalam bidang Engineering dan Information Technology, dengan begitu diharapkan &lt;strong&gt;Tricomindo&lt;/strong&gt; &lt;strong&gt;Cipta&lt;/strong&gt; &lt;strong&gt;Mandiri&lt;/strong&gt; dapat berperan serta ikut meningkatkan dunia usaha Teknologi Informasi baik bagi instansi Pemerintah, BUMN, maupun Swasta.&lt;/p&gt;');
 INSERT INTO `pages_description` VALUES (7, 4, 1, 'Profil Perusahaan', '&lt;p&gt;&lt;strong&gt;VISI DAN MISI&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;VISI&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;Menjadikan &lt;strong&gt;PT. &lt;/strong&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt; &lt;strong&gt;Cipta&lt;/strong&gt; &lt;strong&gt;Mandiri&lt;/strong&gt; sebagai perusahaan jasa yang mandiri, dikelola secara profesional, mampu bersaing di pasar global, mampu meningkatkan kinerjanya (baik secara operasional dan finansial) dalam upaya memenuhi harapan para stakeholders .&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;MISI&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Meningkatkan intensitas dan efektifitas koordinasi baik secara internal di lingkungan &lt;strong&gt;PT. &lt;/strong&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt; &lt;strong&gt;Cipta&lt;/strong&gt; &lt;strong&gt;Mandiri&lt;/strong&gt; maupun secara eksternal dengan pihak regulator dan &lt;strong&gt;PT. &lt;/strong&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt; &lt;strong&gt;Cipta&lt;/strong&gt; &lt;strong&gt;Mandiri&lt;/strong&gt; .&lt;/li&gt;\r\n&lt;li&gt;Memberikan NILAI TAMBAH untuk meningkatkan KUALITAS SUMBER DAYA MANUSIA yang dituangkan dalam PROSEDUR SISTEM OPERASIONAL&lt;/li&gt;\r\n&lt;/ul&gt;');
 INSERT INTO `pages_description` VALUES (8, 4, 2, 'Profil Perusahaan', '&lt;p&gt;&lt;strong&gt;VISI DAN MISI&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;VISI&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;Menjadikan&amp;nbsp;&lt;strong&gt;PT.&amp;nbsp;&lt;/strong&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt;&amp;nbsp;&lt;strong&gt;Cipta&lt;/strong&gt;&amp;nbsp;&lt;strong&gt;Mandiri&lt;/strong&gt;&amp;nbsp;sebagai perusahaan jasa yang mandiri, dikelola secara profesional, mampu bersaing di pasar global, mampu meningkatkan kinerjanya (baik secara operasional dan finansial) dalam upaya memenuhi harapan para stakeholders .&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;MISI&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Meningkatkan intensitas dan efektifitas koordinasi baik secara internal di lingkungan&amp;nbsp;&lt;strong&gt;PT.&amp;nbsp;&lt;/strong&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt;&amp;nbsp;&lt;strong&gt;Cipta&lt;/strong&gt;&amp;nbsp;&lt;strong&gt;Mandiri&lt;/strong&gt;&amp;nbsp;maupun secara eksternal dengan pihak regulator dan&amp;nbsp;&lt;strong&gt;PT.&amp;nbsp;&lt;/strong&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt;&amp;nbsp;&lt;strong&gt;Cipta&lt;/strong&gt;&amp;nbsp;&lt;strong&gt;Mandiri&lt;/strong&gt;&amp;nbsp;.&lt;/li&gt;\r\n&lt;li&gt;Memberikan NILAI TAMBAH untuk meningkatkan KUALITAS SUMBER DAYA MANUSIA yang dituangkan dalam PROSEDUR SISTEM OPERASIONAL&lt;/li&gt;\r\n&lt;/ul&gt;');
+INSERT INTO `pages_description` VALUES (9, 5, 1, 'Organisasi', '&lt;table style=&quot;height: 140px; width: 755px; border: 4px solid #ffffff;&quot; border=&quot;1&quot;&gt;\r\n&lt;tbody&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 751px; height: 16px; padding: 10px; background-color: #7b669e; font-weight: bold; color: #fff;&quot; colspan=&quot;2&quot;&gt;DEWAN KOMISARIS&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 43px; height: 16px; padding: 10px; background-color: #d7d4df; color: #000; border: 4px solid #fff;&quot;&gt;1.&lt;/td&gt;\r\n&lt;td style=&quot;width: 708px; height: 16px; padding: 10px; background-color: #d7d4df; color: #000; border: 4px solid #fff;&quot;&gt;Ir. Eri Ahmad Busoiri, M.Kom&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 43px; height: 16px; padding: 10px; background-color: #eceaef; color: #000; border: 4px solid #fff;&quot;&gt;2.&lt;/td&gt;\r\n&lt;td style=&quot;width: 708px; height: 16px; padding: 10px; background-color: #eceaef; color: #000; border: 4px solid #fff;&quot;&gt;Ir. Bambang Heru Soesatyo&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 43px; height: 16px; padding: 10px; background-color: #d7d4df; color: #000; border: 4px solid #fff;&quot;&gt;3.&lt;/td&gt;\r\n&lt;td style=&quot;width: 708px; height: 16px; padding: 10px; background-color: #d7d4df; color: #000; border: 4px solid #fff;&quot;&gt;Ir. Hilman Perakusumah, MM&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;/tbody&gt;\r\n&lt;/table&gt;\r\n&lt;table style=&quot;height: 140px; width: 755px; border: 4px solid #ffffff;&quot; border=&quot;1&quot;&gt;\r\n&lt;tbody&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 751px; height: 16px; padding: 10px; background-color: #7b669e; font-weight: bold; color: #fff;&quot; colspan=&quot;2&quot;&gt;DEWAN&amp;nbsp;DIREKSI&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 43px; height: 16px; padding: 10px; background-color: #d7d4df; color: #000; border: 4px solid #fff;&quot;&gt;1.&lt;/td&gt;\r\n&lt;td style=&quot;width: 708px; height: 16px; padding: 10px; background-color: #d7d4df; color: #000; border: 4px solid #fff;&quot;&gt;Ir. Toto Budiarto&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 43px; height: 16px; padding: 10px; background-color: #eceaef; color: #000; border: 4px solid #fff;&quot;&gt;2.&lt;/td&gt;\r\n&lt;td style=&quot;width: 708px; height: 16px; padding: 10px; background-color: #eceaef; color: #000; border: 4px solid #fff;&quot;&gt;Endang Supriatna, SE&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;/tbody&gt;\r\n&lt;/table&gt;\r\n&lt;table style=&quot;height: 140px; width: 755px; border: 4px solid #ffffff;&quot; border=&quot;1&quot;&gt;\r\n&lt;tbody&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 751px; height: 16px; padding: 10px; background-color: #7b669e; font-weight: bold; color: #fff;&quot; colspan=&quot;2&quot;&gt;DIVISI ENGINEERING DAN BISDEV&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 43px; height: 16px; padding: 10px; background-color: #d7d4df; color: #000; border: 4px solid #fff;&quot;&gt;1.&lt;/td&gt;\r\n&lt;td style=&quot;width: 708px; height: 16px; padding: 10px; background-color: #d7d4df; color: #000; border: 4px solid #fff;&quot;&gt;Ir. Nanang Gunawan, MT&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 43px; height: 16px; padding: 10px; background-color: #eceaef; color: #000; border: 4px solid #fff;&quot;&gt;2.&lt;/td&gt;\r\n&lt;td style=&quot;width: 708px; height: 16px; padding: 10px; background-color: #eceaef; color: #000; border: 4px solid #fff;&quot;&gt;Ir. Bambang HS&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 43px; height: 16px; padding: 10px; background-color: #d7d4df; color: #000; border: 4px solid #fff;&quot;&gt;3.&lt;/td&gt;\r\n&lt;td style=&quot;width: 708px; height: 16px; padding: 10px; background-color: #d7d4df; color: #000; border: 4px solid #fff;&quot;&gt;Ir. Eri AB&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;/tbody&gt;\r\n&lt;/table&gt;\r\n&lt;table style=&quot;height: 140px; width: 755px; border: 4px solid #ffffff;&quot; border=&quot;1&quot;&gt;\r\n&lt;tbody&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 751px; height: 16px; padding: 10px; background-color: #7b669e; font-weight: bold; color: #fff;&quot; colspan=&quot;2&quot;&gt;DIVISI OPERASIONAL&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 43px; height: 16px; padding: 10px; background-color: #d7d4df; color: #000; border: 4px solid #fff;&quot;&gt;1.&lt;/td&gt;\r\n&lt;td style=&quot;width: 708px; height: 16px; padding: 10px; background-color: #d7d4df; color: #000; border: 4px solid #fff;&quot;&gt;Ir. Firtonius&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 43px; height: 16px; padding: 10px; background-color: #eceaef; color: #000; border: 4px solid #fff;&quot;&gt;2.&lt;/td&gt;\r\n&lt;td style=&quot;width: 708px; height: 16px; padding: 10px; background-color: #eceaef; color: #000; border: 4px solid #fff;&quot;&gt;Ir. Hari Winarso&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;/tbody&gt;\r\n&lt;/table&gt;\r\n&lt;table style=&quot;height: 140px; width: 755px; border: 4px solid #ffffff;&quot; border=&quot;1&quot;&gt;\r\n&lt;tbody&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 751px; height: 16px; padding: 10px; background-color: #7b669e; font-weight: bold; color: #fff;&quot; colspan=&quot;2&quot;&gt;DIVISI ADMINISTRASI DAN KEUANGAN&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 43px; height: 16px; padding: 10px; background-color: #d7d4df; color: #000; border: 4px solid #fff;&quot;&gt;1.&lt;/td&gt;\r\n&lt;td style=&quot;width: 708px; height: 16px; padding: 10px; background-color: #d7d4df; color: #000; border: 4px solid #fff;&quot;&gt;Nuniek Wuryanti&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 43px; height: 16px; padding: 10px; background-color: #eceaef; color: #000; border: 4px solid #fff;&quot;&gt;2.&lt;/td&gt;\r\n&lt;td style=&quot;width: 708px; height: 16px; padding: 10px; background-color: #eceaef; color: #000; border: 4px solid #fff;&quot;&gt;Birgita Prihastina&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;/tbody&gt;\r\n&lt;/table&gt;\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;');
+INSERT INTO `pages_description` VALUES (10, 5, 2, 'Organization', '&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n&lt;table style=&quot;height: 48px; width: 309px; border: 4px solid #fff;&quot; border=&quot;1&quot;&gt;\r\n&lt;tbody&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 308px; height: 16px;&quot; colspan=&quot;2&quot;&gt;DEWAN KOMISARIS&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 28px; height: 16px;&quot;&gt;1.&lt;/td&gt;\r\n&lt;td style=&quot;width: 280px; height: 16px;&quot;&gt;Ir. Eri Ahmad Busoiri, M.Kom&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr style=&quot;height: 16.5px;&quot;&gt;\r\n&lt;td style=&quot;width: 28px; height: 16.5px;&quot;&gt;2.&lt;/td&gt;\r\n&lt;td style=&quot;width: 280px; height: 16.5px;&quot;&gt;Ir. Bambang Heru Soesatyo&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 28px; height: 16px;&quot;&gt;3.&lt;/td&gt;\r\n&lt;td style=&quot;width: 280px; height: 16px;&quot;&gt;Ir. Hilman Perakusumah, MM&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;/tbody&gt;\r\n&lt;/table&gt;\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;');
 COMMIT;
 
 -- ----------------------------
@@ -478,19 +481,19 @@ BEGIN;
 INSERT INTO `setting` VALUES (1, 'general', 'web_name', 'tricomindo');
 INSERT INTO `setting` VALUES (2, 'general', 'web_url', 'http://localhost:8001/tricomindo');
 INSERT INTO `setting` VALUES (3, 'general', 'web_meta', 'tricomindo');
-INSERT INTO `setting` VALUES (4, 'general', 'web_keyword', 'popojicms buat sendiri rasa webmu');
-INSERT INTO `setting` VALUES (5, 'general', 'web_owner', 'PopojiCMS');
+INSERT INTO `setting` VALUES (4, 'general', 'web_keyword', 'portal web tricomindo');
+INSERT INTO `setting` VALUES (5, 'general', 'web_owner', 'Tricomindo');
 INSERT INTO `setting` VALUES (6, 'general', 'email', 'wtnsahyugi.biz@gmail.com');
 INSERT INTO `setting` VALUES (7, 'general', 'telephone', '000-0000-0000');
-INSERT INTO `setting` VALUES (8, 'general', 'fax', '000-0000-0000');
-INSERT INTO `setting` VALUES (9, 'general', 'address', '&lt;strong&gt;Headquarters:&lt;/strong&gt;&lt;br&gt;\n795 Folsom Ave, Suite 600&lt;br&gt;\nSan Francisco, CA 94107');
+INSERT INTO `setting` VALUES (8, 'general', 'fax', '&lt;strong&gt;Kantor Operasional:&lt;/strong&gt;&lt;br&gt; Jl. Salam No. 47 Bandung – 40114 &lt;br&gt; Telp./Fax : 022-7272923  022-7234686');
+INSERT INTO `setting` VALUES (9, 'general', 'address', '&lt;strong&gt;Kantor Pusat:&lt;/strong&gt;&lt;br&gt;\nJl. Kota Baru Raya No. 27\nBandung – 40252\n&lt;br&gt;\nTelp.  : 022-5200994&lt;br&gt;\nFax    : 022-5229402');
 INSERT INTO `setting` VALUES (10, 'general', 'geocode', 'latitude: -6.1753871, longitude: 106.8249641,');
 INSERT INTO `setting` VALUES (11, 'image', 'favicon', 'favicon.png');
 INSERT INTO `setting` VALUES (12, 'image', 'logo', 'logo.png');
 INSERT INTO `setting` VALUES (13, 'image', 'img_medium', '640x480');
 INSERT INTO `setting` VALUES (14, 'local', 'country', 'Indonesia');
 INSERT INTO `setting` VALUES (15, 'local', 'region_state', 'Sulawesi Utara');
-INSERT INTO `setting` VALUES (16, 'local', 'timezone', 'Pacific/Midway');
+INSERT INTO `setting` VALUES (16, 'local', 'timezone', 'Asia/Jakarta');
 INSERT INTO `setting` VALUES (17, 'config', 'maintenance', 'N');
 INSERT INTO `setting` VALUES (18, 'config', 'member_registration', 'N');
 INSERT INTO `setting` VALUES (19, 'config', 'comment', 'N');
@@ -597,6 +600,8 @@ CREATE TABLE `traffic` (
 BEGIN;
 INSERT INTO `traffic` VALUES ('172.21.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.81 Safari/537.36', 'Apple', '', '', '2019-02-11', 38, '1549902293');
 INSERT INTO `traffic` VALUES ('172.22.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.81 Safari/537.36', 'Apple', '', '', '2019-02-12', 107, '1549985175');
+INSERT INTO `traffic` VALUES ('192.168.112.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-12', 64, '1549990799');
+INSERT INTO `traffic` VALUES ('192.168.112.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-13', 6, '1549990875');
 COMMIT;
 
 -- ----------------------------
@@ -648,7 +653,7 @@ CREATE TABLE `users` (
 -- Records of users
 -- ----------------------------
 BEGIN;
-INSERT INTO `users` VALUES (1, 'root', 'cc03e747a6afbbcbf8be7668acfebee5', 'Super Administrator', 'wtnsahyugi.biz@gmail.com', '000-0000-0000', 'No matter how exciting or significant a person\'s life is, a poorly written biography will make it seem like a snore. On the other hand, a good biographer can draw insight from an ordinary life-because they recognize that even the most exciting life is an ordinary life! After all, a biography isn\'t supposed to be a collection of facts assembled in chronological order; it\'s the biographer\'s interpretation of how that life was different and important.', '', '1', 'N', 'd325ca66fb4ce2a63f987c7b1c876268', '2019-02-11', NULL, '0');
+INSERT INTO `users` VALUES (1, 'root', 'cc03e747a6afbbcbf8be7668acfebee5', 'Super Administrator', 'wtnsahyugi.biz@gmail.com', '000-0000-0000', 'No matter how exciting or significant a person\'s life is, a poorly written biography will make it seem like a snore. On the other hand, a good biographer can draw insight from an ordinary life-because they recognize that even the most exciting life is an ordinary life! After all, a biography isn\'t supposed to be a collection of facts assembled in chronological order; it\'s the biographer\'s interpretation of how that life was different and important.', '', '1', 'N', '81a9ff737c1ca40c7916cb233374aafd', '2019-02-11', NULL, '0');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
