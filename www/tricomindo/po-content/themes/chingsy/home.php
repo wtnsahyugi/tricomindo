@@ -2,6 +2,11 @@
 
 <div class="container clearfix">
 	<div class="row">
+		<div class="col-md-4">
+			<!-- Insert Sidebar -->
+			<?=$this->insert('sidebar');?>
+		</div>
+
 		<div class="col-md-8 bottommargin">
 			<div class="col_full bottommargin-lg">
 				<div class="fslider flex-thumb-grid grid-6" data-animation="fade" data-arrows="true" data-thumbs="true">
@@ -266,9 +271,6 @@
 			</div>
 		</div>
 
-		<div class="col-md-4">
-			<!-- Insert Sidebar -->
-			<?=$this->insert('sidebar');?>
-		</div>
+		
 	</div>
 </div>

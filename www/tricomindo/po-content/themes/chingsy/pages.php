@@ -13,17 +13,33 @@
 <section id="content">
 	<div class="content-wrap">
 		<div class="container clearfix">
-			<div class="col_full">
-				<div class="heading-block center nobottomborder">
-					<h2><?=$this->e($pages['title']);?></h2>
+
+			<div class="row">
+				<div class="col-md-4">
+					<!-- Insert Sidebar -->
+					<?php 
+						if ($this->e($pages['seotitle']) == 'tentang-kami') {
+							$this->insert('sidebar_tentang_kami');
+						} elseif ($this->e($pages['seotitle']) == 'visi-misi') {
+							$this->insert('sidebar_visi_misi');
+						} else {
+							$this->insert('sidebar');
+						}
+					?>
 				</div>
-				<?php if ($this->e($pages['picture']) != '') { ?>
-				<div class="col-md-12 text-center" style="margin-bottom:30px;">
-					<img src="<?=BASE_URL.'/'.DIR_CON.'/uploads/'.$this->e($pages['picture']);?>" alt="" />
-				</div>
-				<?php } ?>
-				<div class="col-md-12">
-					<?=htmlspecialchars_decode(html_entity_decode($this->e($pages['content'])));?>
+
+				<div class="col-md-8">
+						<div class="heading-block center nobottomborder">
+							<h2><?=$this->e($pages['title']);?></h2>
+						</div>
+						<?php if ($this->e($pages['picture']) != '') { ?>
+						<div class="col-md-12 text-center" style="margin-bottom:30px;">
+							<img src="<?=BASE_URL.'/'.DIR_CON.'/uploads/'.$this->e($pages['picture']);?>" alt="" />
+						</div>
+						<?php } ?>
+						<div class="col-md-12">
+							<?=htmlspecialchars_decode(html_entity_decode($this->e($pages['content'])));?>
+						</div>
 				</div>
 			</div>
 		</div>

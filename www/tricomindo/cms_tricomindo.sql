@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : mysqlLocal
+ Source Server         : tricomindo
  Source Server Type    : MySQL
- Source Server Version : 50725
+ Source Server Version : 50724
  Source Host           : localhost:3306
- Source Schema         : cms_tricomindo
+ Source Schema         : tricomindo
 
  Target Server Type    : MySQL
- Target Server Version : 50725
+ Target Server Version : 50724
  File Encoding         : 65001
 
- Date: 12/02/2019 09:49:03
+ Date: 12/02/2019 22:30:18
 */
 
 SET NAMES utf8mb4;
@@ -48,7 +48,7 @@ CREATE TABLE `category` (
   `picture` varchar(255) NOT NULL,
   `active` enum('Y','N') NOT NULL DEFAULT 'Y',
   PRIMARY KEY (`id_category`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of category
@@ -70,7 +70,7 @@ CREATE TABLE `category_description` (
   `id_language` int(5) NOT NULL DEFAULT '1',
   `title` varchar(255) NOT NULL,
   PRIMARY KEY (`id_category_description`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of category_description
@@ -209,7 +209,7 @@ CREATE TABLE `menu` (
   `active` enum('Y','N') NOT NULL DEFAULT 'Y',
   `target` varchar(10) NOT NULL DEFAULT 'none',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of menu
@@ -243,16 +243,11 @@ INSERT INTO `menu` VALUES (44, 32, 'Kontak', 'admin.php?mod=contact', '', 4, 1, 
 INSERT INTO `menu` VALUES (45, 0, 'user', 'admin.php?mod=user', 'fa-group', 12, 1, 'Y', 'none');
 INSERT INTO `menu` VALUES (46, 45, 'alluser', 'admin.php?mod=user', '', 1, 1, 'Y', 'none');
 INSERT INTO `menu` VALUES (47, 45, 'addnew', 'admin.php?mod=user&act=addnew', '', 2, 1, 'Y', 'none');
-INSERT INTO `menu` VALUES (48, 0, 'Beranda', './', '', 1, 2, 'Y', 'none');
+INSERT INTO `menu` VALUES (48, 0, 'General', './', '', 1, 2, 'Y', 'none');
 INSERT INTO `menu` VALUES (49, 0, 'Home', './', '', 1, 3, 'Y', 'none');
-INSERT INTO `menu` VALUES (50, 67, 'Tentang Kami', 'pages/tentang-kami', '', 1, 2, 'Y', 'none');
-INSERT INTO `menu` VALUES (51, 67, 'Layanan', 'pages/layanan', '', 2, 2, 'Y', 'none');
-INSERT INTO `menu` VALUES (52, 0, 'Indonesiaku', 'category/indonesiaku', '', 3, 2, 'Y', 'none');
-INSERT INTO `menu` VALUES (53, 0, 'Motivasi', 'category/motivasi', '', 4, 2, 'Y', 'none');
-INSERT INTO `menu` VALUES (54, 0, 'Hubungan', 'category/hubungan', '', 5, 2, 'Y', 'none');
-INSERT INTO `menu` VALUES (55, 0, 'Sukses', 'category/sukses', '', 6, 2, 'Y', 'none');
-INSERT INTO `menu` VALUES (56, 0, 'Galeri', 'album', '', 7, 2, 'Y', 'none');
-INSERT INTO `menu` VALUES (57, 0, 'Kontak', 'contact', '', 8, 2, 'Y', 'none');
+INSERT INTO `menu` VALUES (50, 0, 'Portofolio', 'pages/tentang-kami', '', 4, 2, 'Y', 'none');
+INSERT INTO `menu` VALUES (51, 0, 'Layanan', 'pages/kawasan-kelayakan', '', 3, 2, 'Y', 'none');
+INSERT INTO `menu` VALUES (57, 0, 'Kontak', 'contact', '', 6, 2, 'Y', 'none');
 INSERT INTO `menu` VALUES (58, 0, 'About Us', 'pages/tentang-kami', '', 2, 3, 'Y', 'none');
 INSERT INTO `menu` VALUES (59, 58, 'Services', 'pages/layanan', '', 1, 3, 'Y', 'none');
 INSERT INTO `menu` VALUES (60, 0, 'Indonesiaku', 'category/indonesiaku', '', 50, 3, 'Y', 'none');
@@ -261,7 +256,11 @@ INSERT INTO `menu` VALUES (62, 0, 'Relationship', 'category/hubungan', '', 50, 3
 INSERT INTO `menu` VALUES (63, 0, 'Success', 'category/sukses', '', 50, 3, 'Y', 'none');
 INSERT INTO `menu` VALUES (64, 0, 'Gallery', 'album', '', 50, 3, 'Y', 'none');
 INSERT INTO `menu` VALUES (65, 0, 'Contact', 'contact', '', 50, 3, 'Y', 'none');
-INSERT INTO `menu` VALUES (67, 0, 'Profil Perusahaan', 'pages/tentang-kami', 'fa-sitemap', 2, 2, 'Y', 'none');
+INSERT INTO `menu` VALUES (66, 0, 'Profil Perusahaan', 'pages/tentang-kami', '', 2, 2, 'Y', 'none');
+INSERT INTO `menu` VALUES (67, 0, 'Legalitas', '', '', 5, 2, 'Y', 'none');
+INSERT INTO `menu` VALUES (68, 66, 'Tentang Kami', 'pages/tentang-kami', '', 1, 2, 'Y', 'none');
+INSERT INTO `menu` VALUES (69, 66, 'Visi dan Misi', 'pages/visi-misi', '', 2, 2, 'Y', 'none');
+INSERT INTO `menu` VALUES (70, 66, 'Organisasi', 'pages/organisasi', '', 3, 2, 'Y', 'none');
 COMMIT;
 
 -- ----------------------------
@@ -318,14 +317,15 @@ CREATE TABLE `pages` (
   `picture` varchar(255) NOT NULL,
   `active` enum('Y','N') NOT NULL DEFAULT 'Y',
   PRIMARY KEY (`id_pages`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of pages
 -- ----------------------------
 BEGIN;
-INSERT INTO `pages` VALUES (1, 'tentang-kami', '', 'Y');
-INSERT INTO `pages` VALUES (2, 'layanan', '', 'Y');
+INSERT INTO `pages` VALUES (2, 'kawasan-kelayakan', '', 'Y');
+INSERT INTO `pages` VALUES (3, 'tentang-kami', '', 'Y');
+INSERT INTO `pages` VALUES (4, 'visi-misi', '', 'Y');
 COMMIT;
 
 -- ----------------------------
@@ -339,16 +339,18 @@ CREATE TABLE `pages_description` (
   `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
   PRIMARY KEY (`id_pages_description`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of pages_description
 -- ----------------------------
 BEGIN;
-INSERT INTO `pages_description` VALUES (1, 1, 1, 'Tentang Kami', '&lt;p&gt;PopojiCMS adalah Content Management System yang dibuat dengan konsep yang sangat menarik dan mudah untuk digunakan. PopojiCMS dibuat dengan tampilan responsive dengan base bootstarp dan selain itu juga dilengkapi dengan banyak plugin jQuery.&lt;br /&gt;&lt;br /&gt;PopojiCMS dibangun di atas dasar OOP tetapi tetap tidak menghilangkan rasa native-nya, sehingga developer awam pun bisa dengan mudah menggunakannya. Semoga PopojiCMS dapat menjawab semua kebutuhan Anda tentang web.&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;Terima kasih,&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;Jenuar Dwi Putra Dalapang a.k.a Dwira Survivor&lt;/strong&gt;&lt;/p&gt;');
-INSERT INTO `pages_description` VALUES (2, 1, 2, 'About Us', '&lt;p&gt;PopojiCMS is a Content Management System that is made with a very interesting concept and easy to use. PopojiCMS made its appearance bootstarp responsive to the base and it is also equipped with a lot of jQuery plugins.&lt;br /&gt;&lt;br /&gt;PopojiCMS built on a foundation of OOP, but still does not eliminate its native flavor, so the developer can easily to use. Hopefully PopojiCMS can answer all your needs on the web.&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;Thank you,&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;Jenuar Dwi Putra Dalapang a.k.a Dwira Survivor&lt;/strong&gt;&lt;/p&gt;');
-INSERT INTO `pages_description` VALUES (3, 2, 1, 'Layanan', '&lt;p&gt;PopojiCMS telah berkembang menjadi CMS besar selama 2 tahun terakhir ini, berbagai masukan dan perbaikan sana sini telah menjadikan PopojiCMS siap menjawab kebutuhan web Anda, dukungan komunitas yang luas dan tentunya keamanan web yang handal siap Anda dapatkan.&lt;br /&gt;&lt;br /&gt;Dengan dilengkapi oleh jQuery dan bootstrap, PopojiCMS tampil lebih hidup menghadirkan fitur yang tidak terbayangkan sebelumnya.&lt;br /&gt;&lt;br /&gt; PopojiCMS dibuat dengan tampilan responsive sehingga bisa dibuka pada ukuran layar manapun dan kapanpun.&lt;br /&gt;PopojiCMS didesain dengan tampilan modern yang cantik sehingga menarik pengguna web untuk selalu berkunjung.&lt;br /&gt;PopojiCMS dibuat dengan konsep OOP dengan rasa native sehingga developer awampun bisa mengcustom dengan mudah rasa webnya.&lt;/p&gt;');
-INSERT INTO `pages_description` VALUES (4, 2, 2, 'Services', '&lt;p&gt;PopojiCMS has developed into a major CMS over the past 2 years, a variety of input and improvements here and there have made PopojiCMS ready to answer the needs of your web, broad community support and a reliable web security course is ready you get.&lt;br /&gt;&lt;br /&gt;With furnished by jQuery and Bootstrap, PopojiCMS more vivid brings the features previously unimaginable.&lt;br /&gt;&lt;br /&gt;PopojiCMS made its appearance responsive so that it can be opened on the screen size anytime and anywhere.&lt;br /&gt;PopojiCMS designed with a modern look that is beautiful that attract web users to always visit.&lt;br /&gt;PopojiCMS made with OOP concepts with native flavors so that developers can custom easily its flavor.&lt;/p&gt;');
+INSERT INTO `pages_description` VALUES (3, 2, 1, 'Layanan', '&lt;p&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt; &lt;strong&gt;Cipta&lt;/strong&gt; &lt;strong&gt;Mandiri&lt;/strong&gt;&lt;strong&gt;&amp;nbsp; &lt;/strong&gt;secara khusus membantu klien dalam mengelola dan mengembangkan asset melalui berbagai berbagai paket pelayanan kerja yang meliputi :&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;1. Studi&lt;/strong&gt; &lt;strong&gt;Kawasan&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;Studi Kawasan merupakan kajian pada tingkat dan skala tertentu atas sebuah&amp;nbsp; kawasan yang memiliki karakter maupun permasalahan yang spesifik sehingga membedakannya dengan wilayah lainnya. Layanan ini memberikan informasi atas karakteristik serta permasalahan yang dihadapi oleh suatu kawasan pada suatu cakupan tertentu.&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;2.Studi&lt;/strong&gt; &lt;strong&gt;Kelayakan&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;Studi Kelayakan merupakan kajian yang akan membantu klien dalam memahami faktor-faktor internal dan eksternal, peluang dan kendala, serta membantu dalam penentuan tipe dan skala usaha yang paling menguntungkan dan terjaga kesinambungannya.&lt;/p&gt;');
+INSERT INTO `pages_description` VALUES (4, 2, 2, 'Layanan', '&lt;p&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt;&amp;nbsp;&lt;strong&gt;Cipta&lt;/strong&gt;&amp;nbsp;&lt;strong&gt;Mandiri&lt;/strong&gt;&lt;strong&gt;&amp;nbsp;&amp;nbsp;&lt;/strong&gt;secara khusus membantu klien dalam mengelola dan mengembangkan asset melalui berbagai berbagai paket pelayanan kerja yang meliputi :&lt;/p&gt;\r\n&lt;ol&gt;\r\n&lt;li&gt;\r\n&lt;p&gt;&lt;strong&gt;Studi&lt;/strong&gt;&amp;nbsp;&lt;strong&gt;Kawasan&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;Studi Kawasan merupakan kajian pada tingkat dan skala tertentu atas sebuah&amp;nbsp; kawasan yang memiliki karakter maupun permasalahan yang spesifik sehingga membedakannya dengan wilayah lainnya. Layanan ini memberikan informasi atas karakteristik serta permasalahan yang dihadapi oleh suatu kawasan pada suatu cakupan tertentu.&lt;/p&gt;\r\n&lt;/li&gt;\r\n&lt;li&gt;\r\n&lt;p&gt;&lt;strong&gt;Studi&lt;/strong&gt;&amp;nbsp;&lt;strong&gt;Kelayakan&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;Studi Kelayakan merupakan kajian yang akan membantu klien dalam memahami faktor-faktor internal dan eksternal, peluang dan kendala, serta membantu dalam penentuan tipe dan skala usaha yang paling menguntungkan dan terjaga kesinambungannya.&lt;/p&gt;\r\n&lt;/li&gt;\r\n&lt;/ol&gt;');
+INSERT INTO `pages_description` VALUES (5, 3, 1, 'Profil Perusahaan', '&lt;p&gt;&lt;strong&gt;TENTANG KAMI&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt; &lt;strong&gt;Cipta&lt;/strong&gt; &lt;strong&gt;Mandiri&lt;/strong&gt; adalah perusahaan swasta nasional yang bergerak di bidang Engineering dan Information Technology, Perusahaan ini didirikan oleh para professional muda yang berkompeten dan berpengalaman dibidang Engineering dan Information Technology.&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt; &lt;strong&gt;Cipta&lt;/strong&gt; &lt;strong&gt;Mandiri&lt;/strong&gt; bukanlah yang pertama dibidang jasa ini, tetapi salah satu perusahaan yang dapat memberikan pelayanan yang terbaik dengan memiliki komitmen untuk menyelesaikan semua proyek tepat waktu dengan kualitas terbaik dan biaya yang pantas demi kepuasan pelanggan. Dengan berbekal pengalaman yang dimiliki selama ini &lt;strong&gt;Tricomindo&lt;/strong&gt; &lt;strong&gt;Cipta&lt;/strong&gt; &lt;strong&gt;Mandiri&lt;/strong&gt; tetap konsisten untuk melaksanakan kegiatan dalam bidang Engineering dan Information Technology, dengan begitu diharapkan &lt;strong&gt;Tricomindo&lt;/strong&gt; &lt;strong&gt;Cipta&lt;/strong&gt; &lt;strong&gt;Mandiri&lt;/strong&gt; dapat berperan serta ikut meningkatkan dunia usaha Teknologi Informasi baik bagi instansi Pemerintah, BUMN, maupun Swasta.&lt;/p&gt;');
+INSERT INTO `pages_description` VALUES (6, 3, 2, 'Company Profile', '&lt;p&gt;&lt;strong&gt;TENTANG KAMI&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt; &lt;strong&gt;Cipta&lt;/strong&gt; &lt;strong&gt;Mandiri&lt;/strong&gt; adalah perusahaan swasta nasional yang bergerak di bidang Engineering dan Information Technology, Perusahaan ini didirikan oleh para professional muda yang berkompeten dan berpengalaman dibidang Engineering dan Information Technology.&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt; &lt;strong&gt;Cipta&lt;/strong&gt; &lt;strong&gt;Mandiri&lt;/strong&gt; bukanlah yang pertama dibidang jasa ini, tetapi salah satu perusahaan yang dapat memberikan pelayanan yang terbaik dengan memiliki komitmen untuk menyelesaikan semua proyek tepat waktu dengan kualitas terbaik dan biaya yang pantas demi kepuasan pelanggan. Dengan berbekal pengalaman yang dimiliki selama ini &lt;strong&gt;Tricomindo&lt;/strong&gt; &lt;strong&gt;Cipta&lt;/strong&gt; &lt;strong&gt;Mandiri&lt;/strong&gt; tetap konsisten untuk melaksanakan kegiatan dalam bidang Engineering dan Information Technology, dengan begitu diharapkan &lt;strong&gt;Tricomindo&lt;/strong&gt; &lt;strong&gt;Cipta&lt;/strong&gt; &lt;strong&gt;Mandiri&lt;/strong&gt; dapat berperan serta ikut meningkatkan dunia usaha Teknologi Informasi baik bagi instansi Pemerintah, BUMN, maupun Swasta.&lt;/p&gt;');
+INSERT INTO `pages_description` VALUES (7, 4, 1, 'Profil Perusahaan', '&lt;p&gt;&lt;strong&gt;VISI DAN MISI&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;VISI&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;Menjadikan &lt;strong&gt;PT. &lt;/strong&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt; &lt;strong&gt;Cipta&lt;/strong&gt; &lt;strong&gt;Mandiri&lt;/strong&gt; sebagai perusahaan jasa yang mandiri, dikelola secara profesional, mampu bersaing di pasar global, mampu meningkatkan kinerjanya (baik secara operasional dan finansial) dalam upaya memenuhi harapan para stakeholders .&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;MISI&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Meningkatkan intensitas dan efektifitas koordinasi baik secara internal di lingkungan &lt;strong&gt;PT. &lt;/strong&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt; &lt;strong&gt;Cipta&lt;/strong&gt; &lt;strong&gt;Mandiri&lt;/strong&gt; maupun secara eksternal dengan pihak regulator dan &lt;strong&gt;PT. &lt;/strong&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt; &lt;strong&gt;Cipta&lt;/strong&gt; &lt;strong&gt;Mandiri&lt;/strong&gt; .&lt;/li&gt;\r\n&lt;li&gt;Memberikan NILAI TAMBAH untuk meningkatkan KUALITAS SUMBER DAYA MANUSIA yang dituangkan dalam PROSEDUR SISTEM OPERASIONAL&lt;/li&gt;\r\n&lt;/ul&gt;');
+INSERT INTO `pages_description` VALUES (8, 4, 2, 'Profil Perusahaan', '&lt;p&gt;&lt;strong&gt;VISI DAN MISI&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;VISI&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;Menjadikan&amp;nbsp;&lt;strong&gt;PT.&amp;nbsp;&lt;/strong&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt;&amp;nbsp;&lt;strong&gt;Cipta&lt;/strong&gt;&amp;nbsp;&lt;strong&gt;Mandiri&lt;/strong&gt;&amp;nbsp;sebagai perusahaan jasa yang mandiri, dikelola secara profesional, mampu bersaing di pasar global, mampu meningkatkan kinerjanya (baik secara operasional dan finansial) dalam upaya memenuhi harapan para stakeholders .&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;MISI&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Meningkatkan intensitas dan efektifitas koordinasi baik secara internal di lingkungan&amp;nbsp;&lt;strong&gt;PT.&amp;nbsp;&lt;/strong&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt;&amp;nbsp;&lt;strong&gt;Cipta&lt;/strong&gt;&amp;nbsp;&lt;strong&gt;Mandiri&lt;/strong&gt;&amp;nbsp;maupun secara eksternal dengan pihak regulator dan&amp;nbsp;&lt;strong&gt;PT.&amp;nbsp;&lt;/strong&gt;&lt;strong&gt;Tricomindo&lt;/strong&gt;&amp;nbsp;&lt;strong&gt;Cipta&lt;/strong&gt;&amp;nbsp;&lt;strong&gt;Mandiri&lt;/strong&gt;&amp;nbsp;.&lt;/li&gt;\r\n&lt;li&gt;Memberikan NILAI TAMBAH untuk meningkatkan KUALITAS SUMBER DAYA MANUSIA yang dituangkan dalam PROSEDUR SISTEM OPERASIONAL&lt;/li&gt;\r\n&lt;/ul&gt;');
 COMMIT;
 
 -- ----------------------------
@@ -377,13 +379,13 @@ CREATE TABLE `post` (
 -- ----------------------------
 BEGIN;
 INSERT INTO `post` VALUES (1, 'destinasi-wisata-tentang-toleransi-beragama-di-indonesia', 'indonesia,wisata-religi,toleransi-beragama', '2016-03-31', '10:06:17', '2016-03-31 10:06:17', 1, 'Y', 'Y', 'Y', 'bukit-kasih-kanonang.jpg', '', 17);
-INSERT INTO `post` VALUES (2, 'wisata-alam-manado-maladewa-nya-indonesia', 'indonesia,manado,wisata-manado,sulawesi-utara', '2016-03-31', '06:34:27', '2016-03-31 06:34:27', 1, 'Y', 'Y', 'Y', 'pulau-nain.jpg', '', 5);
+INSERT INTO `post` VALUES (2, 'wisata-alam-manado-maladewa-nya-indonesia', 'indonesia,manado,wisata-manado,sulawesi-utara', '2016-03-31', '06:34:27', '2016-03-31 06:34:27', 1, 'Y', 'Y', 'Y', 'pulau-nain.jpg', '', 4);
 INSERT INTO `post` VALUES (3, 'bangun-lebih-pagi-agar-bisa-merealisasikan-startup-impianmu', 'startup,impian', '2016-03-31', '04:43:27', '2016-03-31 04:43:27', 1, 'Y', 'Y', 'Y', 'trik-bagun-lebih-pagi.jpg', '', 15);
 INSERT INTO `post` VALUES (4, '5-alasan-kenapa-kamu-harus-membangun-usaha-kecil-bukan-startup', 'startup,bisnis,usaha-kecil', '2016-03-31', '08:54:26', '2016-03-31 08:54:26', 1, 'Y', 'N', 'Y', 'membangun-usaha-kecil.jpg', '', 5);
 INSERT INTO `post` VALUES (5, 'cowok-cuek-justru-tepat-jadi-pendampingmu', 'cowok,pendamping', '2016-03-31', '05:04:09', '2016-03-31 05:04:09', 1, 'Y', 'Y', 'Y', 'cowok-cuek.jpg', '', 12);
 INSERT INTO `post` VALUES (6, 'cewek-bergigi-gingsul-emang-layak-disayang', 'cewek,ginsul,sayang,pendamping', '2016-03-31', '10:12:10', '2016-03-31 10:12:10', 1, 'Y', 'N', 'Y', 'cewek-bergigi-gingsul.jpg', '', 8);
 INSERT INTO `post` VALUES (7, 'ingin-sukses-terapkan-7-tips-sukses-oprah-winfrey', 'sukses,tips-sukses', '2016-03-31', '03:20:42', '2016-03-31 03:20:42', 1, 'Y', 'N', 'Y', 'tips-sukses.jpg', '', 4);
-INSERT INTO `post` VALUES (8, '7-ide-beri-edukasi-keuangan-kepada-anak', 'edukasi-anak,keuangan', '2016-03-31', '01:32:45', '2016-03-31 01:32:45', 1, 'Y', 'Y', 'Y', 'edukasi-anak.jpg', '', 10);
+INSERT INTO `post` VALUES (8, '7-ide-beri-edukasi-keuangan-kepada-anak', 'edukasi-anak,keuangan', '2016-03-31', '01:32:45', '2016-03-31 01:32:45', 1, 'Y', 'Y', 'Y', 'edukasi-anak.jpg', '', 6);
 COMMIT;
 
 -- ----------------------------
@@ -473,12 +475,12 @@ CREATE TABLE `setting` (
 -- Records of setting
 -- ----------------------------
 BEGIN;
-INSERT INTO `setting` VALUES (1, 'general', 'web_name', 'Tricomindo Blog');
+INSERT INTO `setting` VALUES (1, 'general', 'web_name', 'tricomindo');
 INSERT INTO `setting` VALUES (2, 'general', 'web_url', 'http://localhost:8001/tricomindo');
-INSERT INTO `setting` VALUES (3, 'general', 'web_meta', 'tentang tricomindo');
-INSERT INTO `setting` VALUES (4, 'general', 'web_keyword', 'tricomindo buat sendiri rasa webmu');
+INSERT INTO `setting` VALUES (3, 'general', 'web_meta', 'tricomindo');
+INSERT INTO `setting` VALUES (4, 'general', 'web_keyword', 'popojicms buat sendiri rasa webmu');
 INSERT INTO `setting` VALUES (5, 'general', 'web_owner', 'PopojiCMS');
-INSERT INTO `setting` VALUES (6, 'general', 'email', 'iipirfannulhakim@gmail.com');
+INSERT INTO `setting` VALUES (6, 'general', 'email', 'wtnsahyugi.biz@gmail.com');
 INSERT INTO `setting` VALUES (7, 'general', 'telephone', '000-0000-0000');
 INSERT INTO `setting` VALUES (8, 'general', 'fax', '000-0000-0000');
 INSERT INTO `setting` VALUES (9, 'general', 'address', '&lt;strong&gt;Headquarters:&lt;/strong&gt;&lt;br&gt;\n795 Folsom Ave, Suite 600&lt;br&gt;\nSan Francisco, CA 94107');
@@ -488,7 +490,7 @@ INSERT INTO `setting` VALUES (12, 'image', 'logo', 'logo.png');
 INSERT INTO `setting` VALUES (13, 'image', 'img_medium', '640x480');
 INSERT INTO `setting` VALUES (14, 'local', 'country', 'Indonesia');
 INSERT INTO `setting` VALUES (15, 'local', 'region_state', 'Sulawesi Utara');
-INSERT INTO `setting` VALUES (16, 'local', 'timezone', 'Asia/Jakarta');
+INSERT INTO `setting` VALUES (16, 'local', 'timezone', 'Pacific/Midway');
 INSERT INTO `setting` VALUES (17, 'config', 'maintenance', 'N');
 INSERT INTO `setting` VALUES (18, 'config', 'member_registration', 'N');
 INSERT INTO `setting` VALUES (19, 'config', 'comment', 'N');
@@ -593,9 +595,8 @@ CREATE TABLE `traffic` (
 -- Records of traffic
 -- ----------------------------
 BEGIN;
-INSERT INTO `traffic` VALUES ('192.168.16.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-11', 14, '1549898641');
-INSERT INTO `traffic` VALUES ('192.168.80.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-11', 53, '1549902363');
-INSERT INTO `traffic` VALUES ('192.168.96.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-12', 27, '1549939704');
+INSERT INTO `traffic` VALUES ('172.21.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.81 Safari/537.36', 'Apple', '', '', '2019-02-11', 38, '1549902293');
+INSERT INTO `traffic` VALUES ('172.22.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.81 Safari/537.36', 'Apple', '', '', '2019-02-12', 107, '1549985175');
 COMMIT;
 
 -- ----------------------------
@@ -647,7 +648,7 @@ CREATE TABLE `users` (
 -- Records of users
 -- ----------------------------
 BEGIN;
-INSERT INTO `users` VALUES (1, 'ipzelhakim', 'ac43724f16e9241d990427ab7c8f4228', 'Super Administrator', 'iipirfannulhakim@gmail.com', '000-0000-0000', 'No matter how exciting or significant a person\'s life is, a poorly written biography will make it seem like a snore. On the other hand, a good biographer can draw insight from an ordinary life-because they recognize that even the most exciting life is an ordinary life! After all, a biography isn\'t supposed to be a collection of facts assembled in chronological order; it\'s the biographer\'s interpretation of how that life was different and important.', '', '1', 'N', '66f0414ebad01bb8edb42c61780917bc', '2019-02-11', NULL, '0');
+INSERT INTO `users` VALUES (1, 'root', 'cc03e747a6afbbcbf8be7668acfebee5', 'Super Administrator', 'wtnsahyugi.biz@gmail.com', '000-0000-0000', 'No matter how exciting or significant a person\'s life is, a poorly written biography will make it seem like a snore. On the other hand, a good biographer can draw insight from an ordinary life-because they recognize that even the most exciting life is an ordinary life! After all, a biography isn\'t supposed to be a collection of facts assembled in chronological order; it\'s the biographer\'s interpretation of how that life was different and important.', '', '1', 'N', 'd325ca66fb4ce2a63f987c7b1c876268', '2019-02-11', NULL, '0');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
