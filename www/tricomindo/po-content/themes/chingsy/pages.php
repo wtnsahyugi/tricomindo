@@ -17,7 +17,15 @@
 			<div class="row">
 				<div class="col-md-4">
 					<!-- Insert Sidebar -->
-					<?=$this->insert('sidebar');?>
+					<?php 
+						if ($this->e($pages['seotitle']) == 'tentang-kami') {
+							$this->insert('sidebar_tentang_kami');
+						} elseif ($this->e($pages['seotitle']) == 'visi-misi') {
+							$this->insert('sidebar_visi_misi');
+						} else {
+							$this->insert('sidebar');
+						}
+					?>
 				</div>
 
 				<div class="col-md-8">

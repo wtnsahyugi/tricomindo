@@ -7,6 +7,7 @@
 		<div class="col_half nobottommargin col_last">
 			<ul>
 			<?php
+			
 				$categorys_side = $this->category()->getAllCategory(WEB_LANG_ID);
 				foreach($categorys_side as $category_side){
 			?>
