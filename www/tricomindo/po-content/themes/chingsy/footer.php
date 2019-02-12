@@ -1,9 +1,10 @@
 <footer id="footer" class="dark">
 	<div class="container">
 		<div class="footer-widgets-wrap clearfix">
-			<div class="col_one_third">
-				<div class="widget clearfix">
-					<div style="background: url('<?=$this->asset('/images/world-map.png', false)?>') no-repeat center center; background-size: 100%;">
+			<div class="row" style="background: url('<?=$this->asset('/images/world-map.png', false)?>') no-repeat center center; background-size: 60%;">
+
+				<div class="col-md-4">
+					<div class="widget clearfix">
 						<h4>Alamat Kantor</h4>
 						<address>
 							<?=htmlspecialchars_decode($this->pocore()->call->posetting[8]['value']);?>
@@ -13,26 +14,49 @@
 						<!-- <abbr title="Email Address"><strong>Email:</strong></abbr> <?=$this->pocore()->call->posetting[5]['value'];?> -->
 					</div>
 				</div>
+
+				<div class="col-md-4">
+					<div class="widget widget_links clearfix">
+						<h4>&nbsp;</h4>
+						<address>
+							<?=htmlspecialchars_decode($this->pocore()->call->posetting[7]['value']);?>
+						</address>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="widget widget_links clearfix">
+						<h4>&nbsp;</h4>
+						<address>
+							<?=htmlspecialchars_decode($this->pocore()->call->posetting[6]['value']);?>
+						</address>
+					</div>
+				</div>
+
 			</div>
-			<div class="col_one_third">
+			
+			<!-- <div class="col_two_third">
 				<div class="widget widget_links clearfix">
 					<div style="background: url('<?=$this->asset('/images/world-map.png', false)?>') no-repeat center center; background-size: 100%;">
 						<h4>&nbsp;</h4>
 						<address>
 							<?=htmlspecialchars_decode($this->pocore()->call->posetting[7]['value']);?>
 						</address>
-					<!-- <h4><?=$this->e($front_quick_link);?></h4>
-					<ul>
-						<li><a href="<?=BASE_URL;?>/category/indonesiaku"><?=$this->e($front_indonesia);?></a></li>
-						<li><a href="<?=BASE_URL;?>/category/motivasi"><?=$this->e($front_motivation);?></a></li>
-						<li><a href="<?=BASE_URL;?>/category/hubungan"><?=$this->e($front_relationship);?></a></li>
-						<li><a href="<?=BASE_URL;?>/category/sukses"><?=$this->e($front_success);?></a></li>
-						<li><a href="<?=BASE_URL;?>/album"><?=$this->e($front_gallery);?></a></li>
-						<li><a href="<?=BASE_URL;?>/contact"><?=$this->e($front_contact);?></a></li>
-					</ul> -->
 					</div>
 				</div>
-			</div>
+			</div> -->
+
+			<!-- <div class="col_one_third">
+				<div class="widget widget_links clearfix">
+					<div style="background: url('<?=$this->asset('/images/world-map.png', false)?>') no-repeat center center; background-size: 100%;">
+						<h4>&nbsp;</h4>
+						<address>
+							<?=htmlspecialchars_decode($this->pocore()->call->posetting[6]['value']);?>
+						</address>
+					</div>
+				</div>
+			</div> -->
+
 		</div>
 	</div>
 
