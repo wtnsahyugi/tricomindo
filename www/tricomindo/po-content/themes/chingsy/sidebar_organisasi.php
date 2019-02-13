@@ -15,6 +15,8 @@
 
 	<div class="widget clearfix">
 		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/organisasi.png';?>" alt="">
+		<br/>
+		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/organisasi-dua.png';?>" alt="">
 	</div>
 
 </div>
