@@ -38,6 +38,18 @@
 							case "perancangan-bangunan":
 								$this->insert('sidebar_perancangan_bangunan');
 								break;
+
+							case "pengawasan-bangunan":
+								$this->insert('sidebar_pengawasan_bangunan');
+								break;
+
+							case "manajemen-konstruksi":
+								$this->insert('sidebar_manajemen_konstruksi');
+								break;
+
+							case "evaluasi-asset":
+								$this->insert('sidebar_evaluasi_asset');
+								break;
 							
 							default:
 								$this->insert('sidebar');

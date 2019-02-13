@@ -3,10 +3,9 @@
 <div class="sidebar-widgets-wrap clearfix">
 
 	<div class="widget widget_links clearfix">
-		<h4><?=$this->e($front_categories);?></h4>
+		<h4><?=$this->e("Profil Perusahaan");?></h4>
 		<div class="col_half nobottommargin col_last">
 			<ul>
-				<li><b>Profil Perusahaan</b></li>
 				<li><a href="<?=BASE_URL;?>/pages/tentang-kami">Tentang Kami</a></li>
 				<li><a href="<?=BASE_URL;?>/pages/visi-misi">Visi dan Misi</a></li>
 				<li><a href="<?=BASE_URL;?>/pages/organisasi">Organisasi</a></li>

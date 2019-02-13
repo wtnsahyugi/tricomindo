@@ -16,9 +16,9 @@
 	</div>
 
 	<div class="widget clearfix">
-		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/studi-kawasan.png';?>" alt="">
+		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/perancangan-banungan.png';?>" alt="">
 		<br/>
-		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/studi-kelayakan.png';?>" alt="">
+		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/perancangan-banungan-dua.png';?>" alt="">
 	</div>
 
 </div>
