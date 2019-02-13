@@ -9,7 +9,7 @@
 	</div>
 </section>
 
-<section id="google-map" class="gmap slider-parallax"></section>
+<!-- <section id="google-map" class="gmap slider-parallax"></section> -->
 
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript" src="<?=$this->asset('/js/jquery.gmap.js')?>"></script>
@@ -41,16 +41,12 @@
 			<div class="postcontent nobottommargin">
 				<?=htmlspecialchars_decode($this->e($alertmsg));?>
 				<form class="nobottommargin" id="template-contactform" name="template-contactform" action="<?=BASE_URL;?>/contact" method="post">
-					<div class="col_one_third">
+					<div class="col_half">
 						<label for="template-contactform-name"><?=$this->e($contact_name);?> <small>*</small></label>
 						<input type="text" id="template-contactform-name" name="contact_name" value="<?=(isset($_POST['contact_name']) ? $_POST['contact_name'] : '');?>" class="sm-form-control required" />
 					</div>
-					<div class="col_one_third">
-						<label for="template-contactform-email"><?=$this->e($contact_email);?> <small>*</small></label>
-						<input type="email" id="template-contactform-email" name="contact_email" value="<?=(isset($_POST['contact_email']) ? $_POST['contact_email'] : '');?>" class="required email sm-form-control" />
-					</div>
-					<div class="col_one_third col_last">
-						<label for="template-contactform-subject"><?=$this->e($contact_subject);?> <small>*</small></label>
+					<div class="col_half col_last">
+						<label for="template-contactform-subject">Posisi yang diinginkan <small>*</small></label>
 						<input type="text" id="template-contactform-subject" name="contact_subject" value="<?=(isset($_POST['contact_subject']) ? $_POST['contact_subject'] : '');?>" class="required sm-form-control" />
 					</div>
 					<div class="clear"></div>
@@ -60,6 +56,10 @@
 					</div>
 					<div class="col_full hidden">
 						<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
+					</div>
+					<div class="col_full">
+						<label for="template-contactform-subject">Upload CV <small>*</small></label>
+						<input type="file" id="cv" name="cv" class="required sm-form-control">
 					</div>
 					<div class="col_full">
 						<div class="g-recaptcha" data-sitekey="<?=$this->pocore()->call->posetting[21]['value'];?>"></div>
@@ -74,7 +74,7 @@
 			</div>
 
 			<div class="sidebar col_last nobottommargin">
-				<address>
+				<!-- <address>
 					<?=htmlspecialchars_decode($this->pocore()->call->posetting[8]['value']);?>
 				</address>
 				<abbr title="Phone Number"><strong>Phone:</strong></abbr> <?=$this->pocore()->call->posetting[6]['value'];?><br>
@@ -84,7 +84,7 @@
 					<a href="javascript:void(0)" class="social-icon si-small si-dark si-facebook"><i class="icon-facebook"></i><i class="icon-facebook"></i></a>
 					<a href="javascript:void(0)" class="social-icon si-small si-dark si-twitter"><i class="icon-twitter"></i><i class="icon-twitter"></i></a>
 					<a href="javascript:void(0)" class="social-icon si-small si-dark si-gplus"><i class="icon-gplus"></i><i class="icon-gplus"></i></a>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
