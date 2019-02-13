@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 13/02/2019 22:37:19
+ Date: 13/02/2019 22:40:48
 */
 
 SET NAMES utf8mb4;
@@ -247,7 +247,7 @@ INSERT INTO `menu` VALUES (48, 0, 'General', './', '', 1, 2, 'Y', 'none');
 INSERT INTO `menu` VALUES (49, 0, 'Home', './', '', 1, 3, 'Y', 'none');
 INSERT INTO `menu` VALUES (50, 0, 'Portofolio', 'pages/fortofolio-perancangan-bangunan', '', 4, 2, 'Y', 'none');
 INSERT INTO `menu` VALUES (51, 0, 'Layanan', 'pages/studi-kawasan-kelayakan', '', 3, 2, 'Y', 'none');
-INSERT INTO `menu` VALUES (57, 0, 'Kontak', 'contact', '', 6, 2, 'Y', 'none');
+INSERT INTO `menu` VALUES (57, 0, 'Karir', 'karir', '', 6, 2, 'Y', 'none');
 INSERT INTO `menu` VALUES (58, 0, 'About Us', 'pages/tentang-kami', '', 2, 3, 'Y', 'none');
 INSERT INTO `menu` VALUES (59, 58, 'Services', 'pages/layanan', '', 1, 3, 'Y', 'none');
 INSERT INTO `menu` VALUES (60, 0, 'Indonesiaku', 'category/indonesiaku', '', 50, 3, 'Y', 'none');
@@ -623,7 +623,7 @@ INSERT INTO `traffic` VALUES ('172.22.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; I
 INSERT INTO `traffic` VALUES ('192.168.112.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-12', 64, '1549990799');
 INSERT INTO `traffic` VALUES ('192.168.112.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-13', 37, '1550025279');
 INSERT INTO `traffic` VALUES ('172.22.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.81 Safari/537.36', 'Apple', '', '', '2019-02-13', 40, '1549992913');
-INSERT INTO `traffic` VALUES ('192.168.128.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-13', 47, '1550072095');
+INSERT INTO `traffic` VALUES ('192.168.128.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-13', 52, '1550072385');
 COMMIT;
 
 -- ----------------------------
