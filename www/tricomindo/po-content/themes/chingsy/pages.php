@@ -50,6 +50,10 @@
 							case "evaluasi-asset":
 								$this->insert('sidebar_evaluasi_asset');
 								break;
+
+							case "fortofolio-perancangan-bangunan":
+								$this->insert('sidebar_ff_perancangan_bangunan');
+								break;
 							
 							default:
 								$this->insert('sidebar');
