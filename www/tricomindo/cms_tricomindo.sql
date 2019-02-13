@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 13/02/2019 09:31:58
+ Date: 13/02/2019 22:37:19
 */
 
 SET NAMES utf8mb4;
@@ -48,7 +48,7 @@ CREATE TABLE `category` (
   `picture` varchar(255) NOT NULL,
   `active` enum('Y','N') NOT NULL DEFAULT 'Y',
   PRIMARY KEY (`id_category`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of category
@@ -70,7 +70,7 @@ CREATE TABLE `category_description` (
   `id_language` int(5) NOT NULL DEFAULT '1',
   `title` varchar(255) NOT NULL,
   PRIMARY KEY (`id_category_description`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of category_description
@@ -245,7 +245,7 @@ INSERT INTO `menu` VALUES (46, 45, 'alluser', 'admin.php?mod=user', '', 1, 1, 'Y
 INSERT INTO `menu` VALUES (47, 45, 'addnew', 'admin.php?mod=user&act=addnew', '', 2, 1, 'Y', 'none');
 INSERT INTO `menu` VALUES (48, 0, 'General', './', '', 1, 2, 'Y', 'none');
 INSERT INTO `menu` VALUES (49, 0, 'Home', './', '', 1, 3, 'Y', 'none');
-INSERT INTO `menu` VALUES (50, 0, 'Portofolio', 'pages/tentang-kami', '', 4, 2, 'Y', 'none');
+INSERT INTO `menu` VALUES (50, 0, 'Portofolio', 'pages/fortofolio-perancangan-bangunan', '', 4, 2, 'Y', 'none');
 INSERT INTO `menu` VALUES (51, 0, 'Layanan', 'pages/studi-kawasan-kelayakan', '', 3, 2, 'Y', 'none');
 INSERT INTO `menu` VALUES (57, 0, 'Kontak', 'contact', '', 6, 2, 'Y', 'none');
 INSERT INTO `menu` VALUES (58, 0, 'About Us', 'pages/tentang-kami', '', 2, 3, 'Y', 'none');
@@ -322,7 +322,7 @@ CREATE TABLE `pages` (
   `picture` varchar(255) NOT NULL,
   `active` enum('Y','N') NOT NULL DEFAULT 'Y',
   PRIMARY KEY (`id_pages`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of pages
@@ -336,6 +336,7 @@ INSERT INTO `pages` VALUES (6, 'perancangan-bangunan', '', 'Y');
 INSERT INTO `pages` VALUES (7, 'pengawasan-bangunan', '', 'Y');
 INSERT INTO `pages` VALUES (8, 'manajemen-konstruksi', '', 'Y');
 INSERT INTO `pages` VALUES (9, 'evaluasi-asset', '', 'Y');
+INSERT INTO `pages` VALUES (10, 'fortofolio-perancangan-bangunan', '', 'Y');
 COMMIT;
 
 -- ----------------------------
@@ -349,7 +350,7 @@ CREATE TABLE `pages_description` (
   `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
   PRIMARY KEY (`id_pages_description`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of pages_description
@@ -371,6 +372,8 @@ INSERT INTO `pages_description` VALUES (15, 8, 1, 'Layanan', '&lt;p&gt;&lt;stron
 INSERT INTO `pages_description` VALUES (16, 8, 2, 'Construction Management', '&lt;p&gt;4.&amp;nbsp;&amp;nbsp;&lt;strong&gt;Manajemen&lt;/strong&gt;&amp;nbsp;&lt;strong&gt;Konstruksi&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;Manajemen Konstruksi merupakan layanan yang kami sediakan untuk mengkoordinasikan dan mengkomunikasikan seluruh proses pembangunan.&amp;nbsp; Kami dapat melakukan tugas antara lain :&lt;/p&gt;\r\n&lt;ul style=&quot;list-style-type: circle; padding-left: 35px;&quot;&gt;\r\n&lt;li&gt;Pada Tahap Pra-Konstruksi; mengkaji ulang studi kelayakan, menyesuaikan akurasi perkiraan biaya dengan jadwal, dan mempersiapkan dokumen untuk keperluan tender.&lt;/li&gt;\r\n&lt;li&gt;Pada Tahap Implementasi; pengendalian biaya dan jadwal, serta pengendalian mutu.&lt;/li&gt;\r\n&lt;li&gt;Pada Tahap Akhir Implementasi; melaksanakan verifikasi hasil-hasil inspeksi, pra-komisi, uji coba dan start-up, dan laporan penutupan proyek.&lt;/li&gt;\r\n&lt;/ul&gt;');
 INSERT INTO `pages_description` VALUES (17, 9, 1, 'Layanan', '&lt;p&gt;&lt;strong&gt;6.&amp;nbsp; Evaluasi Asset&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;Evaluasi Asset merupakan kajian secara menyeluruh yang dilakukan terhadap keberadaan, cakupan maupun kinerja fungsional, kinerja teknis maupun fisik. Kajian ini membantu klien mengetahui kelebihan dan kekurangan asset yang dikelola klien dan pengembangan pada saat ini, serta dapat menjadi landasan bagi perencanaan dan pengembangan lebih lanjut.&lt;/p&gt;');
 INSERT INTO `pages_description` VALUES (18, 9, 2, 'Asset Evaluation', '&lt;p&gt;&lt;strong&gt;6.&amp;nbsp;&amp;nbsp;Evaluasi&amp;nbsp;Asset&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;Evaluasi Asset merupakan kajian secara menyeluruh yang dilakukan terhadap keberadaan, cakupan maupun kinerja fungsional, kinerja teknis maupun fisik. Kajian ini membantu klien mengetahui kelebihan dan kekurangan asset yang dikelola klien dan pengembangan pada saat ini, serta dapat menjadi landasan bagi perencanaan dan pengembangan lebih lanjut.&lt;/p&gt;');
+INSERT INTO `pages_description` VALUES (19, 10, 1, 'Fortofolio', '&lt;table style=&quot;width: 755px; border: 3px solid #ffffff;&quot; border=&quot;1&quot;&gt;\r\n&lt;tbody&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 100px; height: 16px; padding: 10px; background-color: #000; color: #fff; border: 4px solid #fff; font-weight: bold;&quot;&gt;Kategori&lt;/td&gt;\r\n&lt;td style=&quot;width: 708px; height: 16px; padding: 10px; background-color: #000; color: #fff; border: 4px solid #fff; font-weight: bold;&quot;&gt;Perancangan Bangunan&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;/tbody&gt;\r\n&lt;/table&gt;\r\n&lt;table style=&quot;width: 755px; border: 4px solid #ffffff;&quot; border=&quot;1&quot;&gt;\r\n&lt;tbody&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;width: 43px; height: 16px; padding: 10px; background-color: #b35751; color: #fff; border: 2px solid #fff; font-weight: bold;&quot;&gt;No&lt;/td&gt;\r\n&lt;td style=&quot;width: 60px; height: 16px; padding: 10px; background-color: #b35751; color: #fff; text-align: center; border: 2px solid #fff; font-weight: bold;&quot;&gt;Tahun&lt;/td&gt;\r\n&lt;td style=&quot;height: 16px; padding: 10px; background-color: #b35751; color: #fff; border: 2px solid #fff; font-weight: bold;&quot;&gt;Nama Pekerjaan&lt;/td&gt;\r\n&lt;td style=&quot;width: 110px; height: 16px; padding: 10px; background-color: #b35751; color: #fff; border: 2px solid #fff; text-align: center; font-weight: bold;&quot;&gt;Pemberi Tugas&lt;/td&gt;\r\n&lt;td style=&quot;width: 230px; height: 16px; padding: 10px; background-color: #b35751; color: #fff; border: 2px solid #fff; font-weight: bold;&quot;&gt;Lokasi / Area&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #e4d1d0; color: #000; border: 2px solid #fff; text-align: right; vertical-align: top;&quot;&gt;1&lt;/td&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #e4d1d0; color: #000; border: 2px solid #fff; text-align: center; vertical-align: top;&quot;&gt;2006&lt;/td&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #e4d1d0; color: #000; border: 2px solid #fff; vertical-align: top;&quot;&gt;Pekerjaan Survey dan Analisa Kekuatan Tower 4 Legs&lt;/td&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #e4d1d0; color: #000; border: 2px solid #fff; text-align: center; vertical-align: top;&quot;&gt;Telkomsel&lt;/td&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #e4d1d0; color: #000; border: 2px solid #fff; vertical-align: top;&quot;&gt;\r\n&lt;ul style=&quot;padding-left: 20px;&quot;&gt;\r\n&lt;li&gt;84 site Area Sumbagut,&lt;/li&gt;\r\n&lt;li&gt;31 site Area Sumbagteng&lt;/li&gt;\r\n&lt;li&gt;8 site Area Sumbagsel&lt;/li&gt;\r\n&lt;li&gt;33 site Area Jawa&lt;/li&gt;\r\n&lt;li&gt;14 site Area Bali Nusra&lt;/li&gt;\r\n&lt;li&gt;8 site Area Sumalirja&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #f3e9ea; color: #000; border: 2px solid #fff; text-align: right; vertical-align: top;&quot;&gt;2&lt;/td&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #f3e9ea; color: #000; border: 2px solid #fff; text-align: center; vertical-align: top;&quot;&gt;2006&lt;/td&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #f3e9ea; color: #000; border: 2px solid #fff; vertical-align: top;&quot;&gt;Pekerjaan Survey dan Analisa Kekuatan Tower&amp;nbsp;Monopole&lt;/td&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #f3e9ea; color: #000; border: 2px solid #fff; text-align: center; vertical-align: top;&quot;&gt;Telkomsel&lt;/td&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #f3e9ea; color: #000; border: 2px solid #fff; vertical-align: top;&quot;&gt;\r\n&lt;ul style=&quot;padding-left: 20px;&quot;&gt;\r\n&lt;li&gt;72&amp;nbsp;site Area&amp;nbsp;Jawa Barat dan Jabotabek&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #e4d1d0; color: #000; border: 2px solid #fff; text-align: right; vertical-align: top;&quot;&gt;3&lt;/td&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #e4d1d0; color: #000; border: 2px solid #fff; text-align: center; vertical-align: top;&quot;&gt;2007&lt;/td&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #e4d1d0; color: #000; border: 2px solid #fff; vertical-align: top;&quot;&gt;Pekerjaan Survey dan Analisa Kekuatan Tower 4 Legs&lt;/td&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #e4d1d0; color: #000; border: 2px solid #fff; text-align: center; vertical-align: top;&quot;&gt;Telkomsel&lt;/td&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #e4d1d0; color: #000; border: 2px solid #fff; vertical-align: top;&quot;&gt;\r\n&lt;ul style=&quot;padding-left: 20px;&quot;&gt;\r\n&lt;li&gt;84 site Area Sumbagut,&lt;/li&gt;\r\n&lt;li&gt;8 site Area Sumbagteng&lt;/li&gt;\r\n&lt;li&gt;18 site Area Sumbagsel&lt;/li&gt;\r\n&lt;li&gt;38 site Area Jawa&lt;/li&gt;\r\n&lt;li&gt;15 site Area Bali Nusra&lt;/li&gt;\r\n&lt;li&gt;4 site Area Kalimantan&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;tr style=&quot;height: 16px;&quot;&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #f3e9ea; color: #000; border: 2px solid #fff; text-align: right; vertical-align: top;&quot;&gt;4&lt;/td&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #f3e9ea; color: #000; border: 2px solid #fff; text-align: center; vertical-align: top;&quot;&gt;2007&lt;/td&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #f3e9ea; color: #000; border: 2px solid #fff; vertical-align: top;&quot;&gt;Pekerjaan Survey dan Analisa Kekuatan Tower&amp;nbsp;Monopole&lt;/td&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #f3e9ea; color: #000; border: 2px solid #fff; text-align: center; vertical-align: top;&quot;&gt;Telkomsel&lt;/td&gt;\r\n&lt;td style=&quot;padding: 10px; background-color: #f3e9ea; color: #000; border: 2px solid #fff; vertical-align: top;&quot;&gt;\r\n&lt;ul style=&quot;padding-left: 20px;&quot;&gt;\r\n&lt;li&gt;52&amp;nbsp;site Area&amp;nbsp;Jawa Barat dan Jabotabek&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;/td&gt;\r\n&lt;/tr&gt;\r\n&lt;/tbody&gt;\r\n&lt;/table&gt;\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;');
+INSERT INTO `pages_description` VALUES (20, 10, 2, 'FORTOFOLIO', '');
 COMMIT;
 
 -- ----------------------------
@@ -404,7 +407,7 @@ INSERT INTO `post` VALUES (3, 'bangun-lebih-pagi-agar-bisa-merealisasikan-startu
 INSERT INTO `post` VALUES (4, '5-alasan-kenapa-kamu-harus-membangun-usaha-kecil-bukan-startup', 'startup,bisnis,usaha-kecil', '2016-03-31', '08:54:26', '2016-03-31 08:54:26', 1, 'Y', 'N', 'Y', 'membangun-usaha-kecil.jpg', '', 5);
 INSERT INTO `post` VALUES (5, 'cowok-cuek-justru-tepat-jadi-pendampingmu', 'cowok,pendamping', '2016-03-31', '05:04:09', '2016-03-31 05:04:09', 1, 'Y', 'Y', 'Y', 'cowok-cuek.jpg', '', 12);
 INSERT INTO `post` VALUES (6, 'cewek-bergigi-gingsul-emang-layak-disayang', 'cewek,ginsul,sayang,pendamping', '2016-03-31', '10:12:10', '2016-03-31 10:12:10', 1, 'Y', 'N', 'Y', 'cewek-bergigi-gingsul.jpg', '', 8);
-INSERT INTO `post` VALUES (7, 'ingin-sukses-terapkan-7-tips-sukses-oprah-winfrey', 'sukses,tips-sukses', '2016-03-31', '03:20:42', '2016-03-31 03:20:42', 1, 'Y', 'N', 'Y', 'tips-sukses.jpg', '', 4);
+INSERT INTO `post` VALUES (7, 'ingin-sukses-terapkan-7-tips-sukses-oprah-winfrey', 'sukses,tips-sukses', '2016-03-31', '03:20:42', '2016-03-31 03:20:42', 1, 'Y', 'N', 'Y', 'tips-sukses.jpg', '', 5);
 INSERT INTO `post` VALUES (8, '7-ide-beri-edukasi-keuangan-kepada-anak', 'edukasi-anak,keuangan', '2016-03-31', '01:32:45', '2016-03-31 01:32:45', 1, 'Y', 'Y', 'Y', 'edukasi-anak.jpg', '', 6);
 COMMIT;
 
@@ -618,8 +621,9 @@ BEGIN;
 INSERT INTO `traffic` VALUES ('172.21.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.81 Safari/537.36', 'Apple', '', '', '2019-02-11', 38, '1549902293');
 INSERT INTO `traffic` VALUES ('172.22.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.81 Safari/537.36', 'Apple', '', '', '2019-02-12', 107, '1549985175');
 INSERT INTO `traffic` VALUES ('192.168.112.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-12', 64, '1549990799');
-INSERT INTO `traffic` VALUES ('192.168.112.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-13', 29, '1550025087');
+INSERT INTO `traffic` VALUES ('192.168.112.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-13', 37, '1550025279');
 INSERT INTO `traffic` VALUES ('172.22.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.81 Safari/537.36', 'Apple', '', '', '2019-02-13', 40, '1549992913');
+INSERT INTO `traffic` VALUES ('192.168.128.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-13', 47, '1550072095');
 COMMIT;
 
 -- ----------------------------
@@ -671,7 +675,7 @@ CREATE TABLE `users` (
 -- Records of users
 -- ----------------------------
 BEGIN;
-INSERT INTO `users` VALUES (1, 'root', 'cc03e747a6afbbcbf8be7668acfebee5', 'Super Administrator', 'wtnsahyugi.biz@gmail.com', '000-0000-0000', 'No matter how exciting or significant a person\'s life is, a poorly written biography will make it seem like a snore. On the other hand, a good biographer can draw insight from an ordinary life-because they recognize that even the most exciting life is an ordinary life! After all, a biography isn\'t supposed to be a collection of facts assembled in chronological order; it\'s the biographer\'s interpretation of how that life was different and important.', '', '1', 'N', '81a9ff737c1ca40c7916cb233374aafd', '2019-02-11', NULL, '0');
+INSERT INTO `users` VALUES (1, 'root', 'cc03e747a6afbbcbf8be7668acfebee5', 'Super Administrator', 'wtnsahyugi.biz@gmail.com', '000-0000-0000', 'No matter how exciting or significant a person\'s life is, a poorly written biography will make it seem like a snore. On the other hand, a good biographer can draw insight from an ordinary life-because they recognize that even the most exciting life is an ordinary life! After all, a biography isn\'t supposed to be a collection of facts assembled in chronological order; it\'s the biographer\'s interpretation of how that life was different and important.', '', '1', 'N', '530eeefefe88dc662de0ae4e60295b0c', '2019-02-11', NULL, '0');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
