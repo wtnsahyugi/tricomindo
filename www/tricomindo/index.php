@@ -21,7 +21,7 @@
  *
 */
 session_start();
-
+require __DIR__ . '/vendor/autoload.php';
 /**
  * Mendefinisikan Base Url
  *
@@ -31,6 +31,10 @@ session_start();
 $base_root = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] && !in_array(strtolower($_SERVER['HTTPS']),array('off','no'))) ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'].$_SERVER["PHP_SELF"];
 $base_url = preg_replace("/\/(index\.php$)/", "", $base_root);
 define('BASE_URL', $base_url);
+
+$dotenv = Dotenv\Dotenv::create(__DIR__);
+$dotenv->load();
+
 
 /**
  * Memfilter jika engine belum di install
