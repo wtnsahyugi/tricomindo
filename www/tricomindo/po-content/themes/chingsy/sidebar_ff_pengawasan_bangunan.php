@@ -15,17 +15,17 @@
 	</div>
 
 	<div class="widget clearfix">
-		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/model-perancangan-tower-1.png';?>" alt="">
+		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/gedung-grapari.png';?>" alt="">
 		<br/>
-		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/model-perancangan-tower-2.png';?>" alt="">
+		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/ruang-cs-gedung-grapari.png';?>" alt="">
 		<br/>
-		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/posisi-antena.png';?>" alt="">
+		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/tower-4-legs.png';?>" alt="">
 		<br/>
-		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/model-tower-monopole.png';?>" alt="">
+		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/sambungan-bracing-tower.png';?>" alt="">
 		<br/>
-		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/gedung-ttc-pontianak.png';?>" alt="">
+		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/pengukuran-jalur-osp.png';?>" alt="">
 		<br/>
-		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/gedung-ttc-balikpapan.png';?>" alt="">
+		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/pemasangan-kabel-osp.png';?>" alt="">
 	</div>
 
 </div>

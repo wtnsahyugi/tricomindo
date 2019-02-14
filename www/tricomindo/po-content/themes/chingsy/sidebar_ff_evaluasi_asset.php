@@ -15,17 +15,9 @@
 	</div>
 
 	<div class="widget clearfix">
-		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/model-perancangan-tower-1.png';?>" alt="">
+		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/ocupancy-ruang-perangkat.png';?>" alt="">
 		<br/>
-		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/model-perancangan-tower-2.png';?>" alt="">
-		<br/>
-		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/posisi-antena.png';?>" alt="">
-		<br/>
-		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/model-tower-monopole.png';?>" alt="">
-		<br/>
-		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/gedung-ttc-pontianak.png';?>" alt="">
-		<br/>
-		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/gedung-ttc-balikpapan.png';?>" alt="">
+		<img class="alignleft" src="<?=BASE_URL.'/'.DIR_CON.'/uploads/kapasitas-power.png';?>" alt="">
 	</div>
 
 </div>

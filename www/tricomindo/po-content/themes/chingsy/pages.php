@@ -15,6 +15,7 @@
 		<div class="container clearfix">
 
 			<div class="row">
+			<?php if ($this->e($pages['seotitle']) !== 'legalitas') { ?>  
 				<div class="col-md-4">
 					<!-- Insert Sidebar -->
 					<?php 
@@ -54,15 +55,33 @@
 							case "fortofolio-perancangan-bangunan":
 								$this->insert('sidebar_ff_perancangan_bangunan');
 								break;
-							
+
+							case "fortofolio-pengawasan-bangunan":
+								$this->insert('sidebar_ff_pengawasan_bangunan');
+								break;
+
+							case "fortofolio-manajemen-konstruksi":
+								$this->insert('sidebar_ff_manajemen_konstruksi');
+								break;
+
+							case "fortofolio-evaluasi-asset":
+								$this->insert('sidebar_ff_evaluasi_asset');
+								break;
+
 							default:
-								$this->insert('sidebar');
+								// $this->insert('sidebar');
 								break;
 						}
 					?>
 				</div>
 
+				<?php } ?>
+
+				<?php if ($this->e($pages['seotitle']) == 'legalitas') { ?> 
+				<div class="col-md-12">
+				<?php } else { ?> 
 				<div class="col-md-8">
+				<?php } ?>
 						<div class="heading-block center nobottomborder">
 							<h2><?=$this->e($pages['title']);?></h2>
 						</div>
