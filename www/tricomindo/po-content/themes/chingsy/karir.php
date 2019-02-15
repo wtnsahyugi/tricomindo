@@ -4,7 +4,7 @@
 	<div class="container clearfix">
 		<ol class="breadcrumb">
 			<li><a href="<?=BASE_URL;?>"><?=$this->e($front_home);?></a></li>
-			<li><a href="<?=BASE_URL.'/karir';?>"><?=$this->e($front_karir);?></a></li>
+			<li><a href="<?=BASE_URL.'/karir';?>"><?=$this->e($front_career);?></a></li>
 		</ol>
 	</div>
 </section>
