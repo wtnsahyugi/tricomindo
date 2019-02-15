@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 14/02/2019 09:40:16
+ Date: 15/02/2019 09:52:55
 */
 
 SET NAMES utf8mb4;
@@ -36,6 +36,20 @@ BEGIN;
 INSERT INTO `album` VALUES (1, 'Pure', 'pure', 'Y');
 INSERT INTO `album` VALUES (2, 'Plain', 'plain', 'Y');
 COMMIT;
+
+-- ----------------------------
+-- Table structure for career
+-- ----------------------------
+DROP TABLE IF EXISTS `career`;
+CREATE TABLE `career` (
+  `id_career` int(8) NOT NULL AUTO_INCREMENT,
+  `career_name` varchar(100) NOT NULL,
+  `career_position` varchar(255) NOT NULL,
+  `career_message` text,
+  `career_attachment` text,
+  `datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`id_career`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for category
@@ -641,6 +655,8 @@ INSERT INTO `traffic` VALUES ('192.168.112.1', 'Chrome', 'Mozilla/5.0 (Macintosh
 INSERT INTO `traffic` VALUES ('172.22.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.81 Safari/537.36', 'Apple', '', '', '2019-02-13', 40, '1549992913');
 INSERT INTO `traffic` VALUES ('192.168.128.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-13', 53, '1550072490');
 INSERT INTO `traffic` VALUES ('192.168.128.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-14', 84, '1550111873');
+INSERT INTO `traffic` VALUES ('192.168.144.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-14', 38, '1550160834');
+INSERT INTO `traffic` VALUES ('192.168.144.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-15', 141, '1550198878');
 COMMIT;
 
 -- ----------------------------
