@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 15/02/2019 09:52:55
+ Date: 18/02/2019 01:08:03
 */
 
 SET NAMES utf8mb4;
@@ -46,7 +46,7 @@ CREATE TABLE `career` (
   `career_name` varchar(100) NOT NULL,
   `career_position` varchar(255) NOT NULL,
   `career_message` text,
-  `career_attachment` text,
+  `career_attachment` varchar(255) NOT NULL,
   `datetime` datetime DEFAULT NULL,
   PRIMARY KEY (`id_career`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -549,8 +549,8 @@ INSERT INTO `setting` VALUES (18, 'config', 'member_registration', 'N');
 INSERT INTO `setting` VALUES (19, 'config', 'comment', 'N');
 INSERT INTO `setting` VALUES (20, 'config', 'item_per_page', '5');
 INSERT INTO `setting` VALUES (21, 'config', 'google_analytics', '');
-INSERT INTO `setting` VALUES (22, 'config', 'recaptcha_sitekey', '6LckEgETAAAAAPdqrQSY_boMDLZRL1vpkAatVqKf');
-INSERT INTO `setting` VALUES (23, 'config', 'recaptcha_secretkey', '6LckEgETAAAAAHqx4VFD4zNL96P9UEikD8BHfT28');
+INSERT INTO `setting` VALUES (22, 'config', 'recaptcha_sitekey', '6LcfCpIUAAAAACxhfEpAoOhIrqjNiPF0ZD-o8HBz');
+INSERT INTO `setting` VALUES (23, 'config', 'recaptcha_secretkey', '6LcfCpIUAAAAAFx2uSr2A18FuK2_UEX9A0sD-KER');
 INSERT INTO `setting` VALUES (24, 'mail', 'mail_protocol', 'Mail');
 INSERT INTO `setting` VALUES (25, 'mail', 'mail_hostname', '');
 INSERT INTO `setting` VALUES (26, 'mail', 'mail_username', '');
@@ -657,6 +657,8 @@ INSERT INTO `traffic` VALUES ('192.168.128.1', 'Chrome', 'Mozilla/5.0 (Macintosh
 INSERT INTO `traffic` VALUES ('192.168.128.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-14', 84, '1550111873');
 INSERT INTO `traffic` VALUES ('192.168.144.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-14', 38, '1550160834');
 INSERT INTO `traffic` VALUES ('192.168.144.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-15', 141, '1550198878');
+INSERT INTO `traffic` VALUES ('172.18.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-17', 14, '1550422783');
+INSERT INTO `traffic` VALUES ('172.18.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-18', 30, '1550426523');
 COMMIT;
 
 -- ----------------------------
@@ -708,7 +710,7 @@ CREATE TABLE `users` (
 -- Records of users
 -- ----------------------------
 BEGIN;
-INSERT INTO `users` VALUES (1, 'root', 'cc03e747a6afbbcbf8be7668acfebee5', 'Super Administrator', 'wtnsahyugi.biz@gmail.com', '000-0000-0000', 'No matter how exciting or significant a person\'s life is, a poorly written biography will make it seem like a snore. On the other hand, a good biographer can draw insight from an ordinary life-because they recognize that even the most exciting life is an ordinary life! After all, a biography isn\'t supposed to be a collection of facts assembled in chronological order; it\'s the biographer\'s interpretation of how that life was different and important.', '', '1', 'N', 'e2bf3ea6e3021fe018053936d05abc7c', '2019-02-11', NULL, '0');
+INSERT INTO `users` VALUES (1, 'root', 'cc03e747a6afbbcbf8be7668acfebee5', 'Super Administrator', 'wtnsahyugi.biz@gmail.com', '000-0000-0000', 'No matter how exciting or significant a person\'s life is, a poorly written biography will make it seem like a snore. On the other hand, a good biographer can draw insight from an ordinary life-because they recognize that even the most exciting life is an ordinary life! After all, a biography isn\'t supposed to be a collection of facts assembled in chronological order; it\'s the biographer\'s interpretation of how that life was different and important.', '', '1', 'N', '7fb7f97a6819a4d8ba386327fc358a6e', '2019-02-11', NULL, '0');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
