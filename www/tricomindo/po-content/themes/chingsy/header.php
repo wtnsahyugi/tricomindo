@@ -1,17 +1,20 @@
 
 <header id="header" class="sticky-style-2">
 	<div class="container clearfix">
-		<div id="logo">
+		<div id="header">
+			<a href="<?=BASE_URL;?>" class="header" data-dark-logo="<?=BASE_URL.'/'.DIR_INC;?>/images/header-picture.png"><img src="<?=BASE_URL.'/'.DIR_INC;?>/images/header-picture.png" alt="Logo" /></a>
+		</div>
+		<!--<div id="logo">
 			<a href="<?=BASE_URL;?>" class="standard-logo" data-dark-logo="<?=BASE_URL.'/'.DIR_INC;?>/images/logo.png"><img src="<?=BASE_URL.'/'.DIR_INC;?>/images/logo.png" alt="Logo" /></a>
 			<a href="<?=BASE_URL;?>" class="retina-logo" data-dark-logo="<?=BASE_URL.'/'.DIR_INC;?>/images/logo.png"><img src="<?=BASE_URL.'/'.DIR_INC;?>/images/logo.png" alt="Logo" /></a>
-		</div>
+		</div>-->
 		<!-- <div class="top-advert">
 			<img src="<?=BASE_URL;?>/<?=DIR_CON;?>/uploads/ad-long.jpg" alt="">
 		</div> -->
 	</div>
 
-	<div id="header-wrap">
-		<nav id="primary-menu" class="style-2">
+	<div id="header-warp">
+		<nav id="primary-menu" class="style-2" style="color: #7b669e">
 			<div class="container clearfix">
 				<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 				<?php
