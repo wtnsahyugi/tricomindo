@@ -1,14 +1,5 @@
 <?=$this->layout('index');?>
 
-<section id="page-title" class="page-title-mini" style="margin-top:-80px;">
-	<div class="container clearfix">
-		<ol class="breadcrumb">
-			<li><a href="<?=BASE_URL;?>"><?=$this->e($front_home);?></a></li>
-			<li><a href="<?=BASE_URL.'/karir';?>"><?=$this->e($front_career);?></a></li>
-		</ol>
-	</div>
-</section>
-
 <!-- <section id="google-map" class="gmap slider-parallax"></section> -->
 
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -36,7 +27,6 @@
 </script>
 
 <section id="content">
-	<div class="content-wrap">
 		<div class="container clearfix">
 			<div class="postcontent nobottommargin">
 				<?=htmlspecialchars_decode($this->e($alertmsg));?>
@@ -87,5 +77,4 @@
 				</div> -->
 			</div>
 		</div>
-	</div>
 </section>

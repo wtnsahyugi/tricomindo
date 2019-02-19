@@ -1,8 +1,8 @@
 
-<header id="header" class="sticky-style-2">
+<header id="header" class="sticky-style-2" style="border: 0">
 	<div class="container clearfix">
-		<div id="header">
-			<a href="<?=BASE_URL;?>" class="header" data-dark-logo="<?=BASE_URL.'/'.DIR_INC;?>/images/header-picture.png"><img src="<?=BASE_URL.'/'.DIR_INC;?>/images/header-picture.png" alt="Logo" /></a>
+		<div id="header" style="border:0">
+			<img src="<?=BASE_URL.'/'.DIR_INC;?>/images/header-picture.png" alt="Logo" /></a>
 		</div>
 		<!--<div id="logo">
 			<a href="<?=BASE_URL;?>" class="standard-logo" data-dark-logo="<?=BASE_URL.'/'.DIR_INC;?>/images/logo.png"><img src="<?=BASE_URL.'/'.DIR_INC;?>/images/logo.png" alt="Logo" /></a>
@@ -12,9 +12,9 @@
 			<img src="<?=BASE_URL;?>/<?=DIR_CON;?>/uploads/ad-long.jpg" alt="">
 		</div> -->
 	</div>
-
+	
 	<div id="header-warp">
-		<nav id="primary-menu" class="style-2" style="color: #7b669e">
+		<nav id="primary-menu" class="style-2">
 			<div class="container clearfix">
 				<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 				<?php
