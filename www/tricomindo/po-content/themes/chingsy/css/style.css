@@ -1089,7 +1089,8 @@ body.stretched #header.full-header .container {
 	height: 100px;
 	line-height: 100px;
 	padding: 0 15px;
-	color: #444;
+	color: #FFF;
+	background-color: #7b669e;
 	font-weight: bold;
 	font-size: 13px;
 	letter-spacing: 1px;
@@ -1118,8 +1119,8 @@ body.stretched #header.full-header .container {
 #primary-menu > ul > li:hover a,
 #primary-menu > ul > li.current a { 
 	/* color: #7b669e;  */
-	color: #fff !important;
-	background-color: #7b669e !important;
+	color: #7b669e !important;
+	background-color: #fff !important;
 }
 
 #primary-menu > ul > li.sub-menu > a > div { }
@@ -1323,7 +1324,7 @@ body.stretched #header.full-header #primary-menu ul li.mega-menu .mega-menu-cont
 #primary-menu.style-2 {
 	float: none;
 	max-width: none;
-	border-top: 1px solid #F5F5F5;
+	/*border-top: 1px solid #F5F5F5;*/
 }
 
 #primary-menu.style-2 > div > ul { float: left; }

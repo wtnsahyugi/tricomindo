@@ -1,15 +1,5 @@
 <?=$this->layout('index');?>
 
-<section id="page-title" class="page-title-mini" style="margin-top:-80px;">
-	<div class="container clearfix">
-		<ol class="breadcrumb">
-			<li><a href="<?=BASE_URL;?>"><?=$this->e($front_home);?></a></li>
-			<li><a href="<?=BASE_URL;?>/category/all"><?=$this->e($front_category);?></a></li>
-			<li><a href="<?=$this->e($social_url);?>"><?=$this->e($page_title);?></a></li>
-		</ol>
-	</div>
-</section>
-
 <section id="content">
 	<div class="content-wrap">
 		<div class="container clearfix">
