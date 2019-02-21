@@ -1,7 +1,6 @@
 .DS_Store
-/www/tricomindo/po-includes/core/config.php
 /www/tricomindo/.env
 /www/tricomindo/vendor/
 /www/tricomindo/install1.php
 /www/tricomindo/composer.lock
-www/tricomindo/po-includes/core/config.php
+/www/tricomindo/po-includes/core/config.php
