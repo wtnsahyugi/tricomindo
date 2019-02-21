@@ -7,7 +7,8 @@ RUN apt-get update && \
 
 RUN curl -sSL https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer \
-    && apt-get install -y zlib1g-dev git wget \
+    && apt-get update && \
+    apt-get install -y zlib1g-dev git wget \
     && docker-php-ext-install zip \
     && rm -rf /var/lib/apt/lists/*
 
