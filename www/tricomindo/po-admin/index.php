@@ -48,6 +48,7 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser']) AND empty($_SE
 
     <script type="text/javascript" src="../<?=DIR_INC;?>/js/jquery/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="../<?=DIR_INC;?>/js/bootstrap/bootstrap.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
