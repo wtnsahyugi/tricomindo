@@ -14,5 +14,5 @@
 */
 
 $(document).ready(function() {
-	$('#table-library').buildtable('route.php?mod=library&act=datatable');
+	$('#table-career').buildtable('route.php?mod=career&act=datatable');
 });
