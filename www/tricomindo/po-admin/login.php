@@ -42,7 +42,10 @@ class Login extends PoCore
 				$errormsg = "<div class='alert alert-warning'>Please complete all form!<a class='close' data-dismiss='alert' href='#' aria-hidden='true'>&times;</a></div>";
 			} elseif($_GET['errormsg'] == 2) {
 				$errormsg = "<div class='alert alert-warning'>Username or password not correct!<a class='close' data-dismiss='alert' href='#' aria-hidden='true'>&times;</a></div>";
-			} else {
+			}  elseif($_GET['errormsg'] == 3) {
+				$errormsg = "<div class='alert alert-warning'>Mohon klik terlebih dahulu verifikasi bukan robot!<a class='close' data-dismiss='alert' href='#' aria-hidden='true'>&times;</a></div>";
+			}
+			else {
 				header('location:index.php?mod=login&act=index');
 			}
 		}
@@ -66,6 +69,11 @@ class Login extends PoCore
 				<div id="patternHolder" style="margin:0 auto;"></div>
 				<div class="box-con-password-lock"></div>
 			</div>
+
+			<div class="form-group form-actions box-action" style="display:none;">
+				<div class="g-recaptcha" data-sitekey="<?=$this->posetting[21]['value'];?>"></div>
+			</div>
+			
 			<div class="form-group form-actions box-action" style="display:none;">
 				<input type="submit" id="btn-login" class="btn btn-custom btn-block" value="Log in">
 			</div>
@@ -135,51 +143,69 @@ class Login extends PoCore
 	public function proclogin()
 	{
 		$_POST = $this->poval->sanitize($_POST);
-		$this->poval->validation_rules(array(
-			'username' => 'required|max_len,50|min_len,3',
-			'password' => 'required|max_len,50|min_len,6'
-		));
-		$this->poval->filter_rules(array(
-			'username' => 'trim|sanitize_string',
-			'password' => 'trim'
-		));
-		$validated_data = $this->poval->run($_POST);
-		if($validated_data === false) {
-			header('location:index.php?mod=login&act=index&errormsg=1');
-		} else {
-			$count_user = $this->podb->from('users')
-				->where('username', $_POST['username'])
-				->where('password', md5($_POST['password']))
-				->where('block', 'N')
-				->where('level', array('1','2','3'))
-				->count();
-			if ($count_user > 0) {
-				$user = $this->podb->from('users')
-					->select('user_level.menu')
-					->leftJoin('user_level ON user_level.id_level = users.level')
+
+		$secret = $this->posetting[22]['value'];
+		$recaptcha = new PoReCaptcha($secret);
+
+		if (!empty($_POST["g-recaptcha-response"])) {
+			$resp = $recaptcha->verifyResponse(
+				$_SERVER["REMOTE_ADDR"],
+				$_POST["g-recaptcha-response"]
+			);
+
+			if (!$resp != null && !$resp->success) {
+				header('location:index.php?mod=login&act=index&errormsg=3');
+				return;
+			}
+
+			$this->poval->validation_rules(array(
+				'username' => 'required|max_len,50|min_len,3',
+				'password' => 'required|max_len,50|min_len,6'
+			));
+			$this->poval->filter_rules(array(
+				'username' => 'trim|sanitize_string',
+				'password' => 'trim'
+			));
+			$validated_data = $this->poval->run($_POST);
+			if($validated_data === false) {
+				header('location:index.php?mod=login&act=index&errormsg=1');
+			} else {
+				$count_user = $this->podb->from('users')
 					->where('username', $_POST['username'])
 					->where('password', md5($_POST['password']))
 					->where('block', 'N')
-					->where('users.level', array('1','2','3'))
-					->limit(1)
-					->fetch();
-				$timeout = new PoTimeout;
-				$timeout->rec_session($user);
-				$timeout->timer();
-				$sid_lama = session_id();
-				session_regenerate_id();
-				$sid_baru = session_id();
-				$sesi = array(
-					'id_session' => $sid_baru
-				);
-				$query = $this->podb->update('users')
-					->set($sesi)
-					->where('username', $_POST['username']);
-				$query->execute();
-				header('location:admin.php?mod=home');
-			} else {
-				header('location:index.php?mod=login&act=index&errormsg=2');
+					->where('level', array('1','2','3'))
+					->count();
+				if ($count_user > 0) {
+					$user = $this->podb->from('users')
+						->select('user_level.menu')
+						->leftJoin('user_level ON user_level.id_level = users.level')
+						->where('username', $_POST['username'])
+						->where('password', md5($_POST['password']))
+						->where('block', 'N')
+						->where('users.level', array('1','2','3'))
+						->limit(1)
+						->fetch();
+					$timeout = new PoTimeout;
+					$timeout->rec_session($user);
+					$timeout->timer();
+					$sid_lama = session_id();
+					session_regenerate_id();
+					$sid_baru = session_id();
+					$sesi = array(
+						'id_session' => $sid_baru
+					);
+					$query = $this->podb->update('users')
+						->set($sesi)
+						->where('username', $_POST['username']);
+					$query->execute();
+					header('location:admin.php?mod=home');
+				} else {
+					header('location:index.php?mod=login&act=index&errormsg=2');
+				}
 			}
+		} else {
+			header('location:index.php?mod=login&act=index&errormsg=3');
 		}
 	}
 
