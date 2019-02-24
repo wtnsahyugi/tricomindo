@@ -43,7 +43,7 @@ if ($_SESSION['login'] == 0) {
     <meta name="robots" content="index, follow" />
     <meta name="description" content="Administrator <?=CONF_STRUCTURE;?>" />
     <meta name="generator" content="<?=CONF_STRUCTURE;?> <?=CONF_VER;?>.<?=CONF_BUILD;?>" />
-    <meta name="author" content="Dwira Survivor" />
+    <meta name="author" content="<?=CONF_STRUCTURE;?>" />
     <meta name="language" content="Indonesia" />
     <meta name="revisit-after" content="7" />
     <meta name="webcrawlers" content="all" />

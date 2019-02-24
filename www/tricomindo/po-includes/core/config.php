@@ -1,9 +1,9 @@
 <?php
 
-$site['structure'] = 'PopojiCMS';
-$site['ver'] = '2.0';
+$site['structure'] = 'Tricomindo';
+$site['ver'] = '1.0';
 $site['build'] = '1';
-$site['release'] = '07 Juli 2016';
+$site['release'] = '23 Februari 2019';
 
 define('CONF_STRUCTURE', $site['structure']);
 define('CONF_VER', $site['ver']);

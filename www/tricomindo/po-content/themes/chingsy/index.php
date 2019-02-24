@@ -9,8 +9,8 @@
     <meta name="robots" content="index, follow" />
     <meta name="description" content="<?=$this->e($page_desc);?>" />
     <meta name="keywords" content="<?=$this->e($page_key);?>" />
-    <meta http-equiv="Copyright" content="popojicms" />
-    <meta name="author" content="PopojiCMS" />
+    <meta http-equiv="Copyright" content="<?=CONF_STRUCTURE;?>" />
+    <meta name="author" content="<?=CONF_STRUCTURE;?>" />
     <meta http-equiv="imagetoolbar" content="no" />
     <meta name="language" content="Indonesia" />
     <meta name="revisit-after" content="7" />

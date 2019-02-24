@@ -21,7 +21,7 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser']) AND empty($_SE
     <meta name="robots" content="index, follow" />
     <meta name="description" content="Log In Panel <?=CONF_STRUCTURE;?>" />
     <meta name="generator" content="<?=CONF_STRUCTURE;?> <?=CONF_VER;?>.<?=CONF_BUILD;?>" />
-    <meta name="author" content="Dwira Survivor" />
+    <meta name="author" content="<?=CONF_STRUCTURE;?>" />
     <meta name="language" content="Indonesia" />
     <meta name="revisit-after" content="7" />
     <meta name="webcrawlers" content="all" />
@@ -63,7 +63,7 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser']) AND empty($_SE
                 <div class="col-md-12">
                     <div class="form-wrap">
                         <div class="col-md-12 text-center">
-                            <img src="../<?=DIR_INC;?>/images/logo.png" class="logo" width="100" />
+                            <img src="../<?=DIR_INC;?>/images/admin-logo.png" class="logo" width="100" />
                         </div>
                         <?php
                             if (VQMOD == TRUE) {
@@ -73,7 +73,7 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser']) AND empty($_SE
                             }
                         ?>
                         <div class="col-md-12 text-center" id="footer">
-                            <p><?=CONF_STRUCTURE;?> &copy; 2013-2016. MIT License</p>
+                            <p><?=CONF_STRUCTURE;?> &copy; 2019. MIT License</p>
                         </div>
                     </div>
                 </div>

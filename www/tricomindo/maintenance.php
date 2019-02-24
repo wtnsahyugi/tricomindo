@@ -39,7 +39,7 @@ if ($core->posetting[16]['value'] == 'N') {
 	<meta name="robots" content="index, follow" />
     <meta name="description" content="Log In Panel <?=CONF_STRUCTURE;?>" />
     <meta name="generator" content="<?=CONF_STRUCTURE;?> <?=CONF_VER;?>.<?=CONF_BUILD;?>" />
-    <meta name="author" content="Dwira Survivor" />
+    <meta name="author" content="<?=CONF_STRUCTURE;?>" />
     <meta name="language" content="Indonesia" />
     <meta name="revisit-after" content="7" />
     <meta name="webcrawlers" content="all" />
