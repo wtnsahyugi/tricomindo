@@ -25,6 +25,7 @@ $_['allpages'] = 'Semua Halaman';
 $_['media'] = 'Media';
 $_['library'] = 'Pustaka';
 $_['career'] = 'Karir';
+$_['careerposition'] = 'Posisi (Lamaran)';
 $_['setting'] = 'Pengaturan';
 $_['theme'] = 'Tema';
 $_['alltheme'] = 'Semua Tema';

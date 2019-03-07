@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 23/02/2019 19:43:23
+ Date: 07/03/2019 21:31:16
 */
 
 SET NAMES utf8mb4;
@@ -49,7 +49,25 @@ CREATE TABLE `career` (
   `career_attachment` varchar(255) NOT NULL,
   `datetime` datetime DEFAULT NULL,
   PRIMARY KEY (`id_career`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of career
+-- ----------------------------
+BEGIN;
+INSERT INTO `career` VALUES (7, 'iip irfan', 'software engineer', 'selamat pagi,\r\nsaya yg bertanda tangan di bawah ini\r\nNama : iip irfan nulhakim\r\n', 'CV_iip irfan_software engineer_20190224_062626.docx', '2019-02-24 06:26:26');
+COMMIT;
+
+-- ----------------------------
+-- Table structure for career_position
+-- ----------------------------
+DROP TABLE IF EXISTS `career_position`;
+CREATE TABLE `career_position` (
+  `id_career_position` int(8) NOT NULL AUTO_INCREMENT,
+  `career_position_name` varchar(100) NOT NULL,
+  `active` enum('Y','N') NOT NULL DEFAULT 'Y',
+  PRIMARY KEY (`id_career_position`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for category
@@ -223,7 +241,7 @@ CREATE TABLE `menu` (
   `active` enum('Y','N') NOT NULL DEFAULT 'Y',
   `target` varchar(10) NOT NULL DEFAULT 'none',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of menu
@@ -243,18 +261,18 @@ INSERT INTO `menu` VALUES (20, 0, 'pages', 'admin.php?mod=pages', 'fa-file', 6, 
 INSERT INTO `menu` VALUES (21, 20, 'allpages', 'admin.php?mod=pages', '', 1, 1, 'Y', 'none');
 INSERT INTO `menu` VALUES (22, 20, 'addnew', 'admin.php?mod=pages&act=addnew', '', 2, 1, 'Y', 'none');
 INSERT INTO `menu` VALUES (23, 0, 'library', 'admin.php?mod=library', 'fa-picture-o', 7, 1, 'Y', 'none');
-INSERT INTO `menu` VALUES (27, 0, 'setting', 'admin.php?mod=setting', 'fa-cog', 9, 1, 'Y', 'none');
-INSERT INTO `menu` VALUES (28, 0, 'theme', 'admin.php?mod=theme', 'fa-desktop', 10, 1, 'Y', 'none');
+INSERT INTO `menu` VALUES (27, 0, 'setting', 'admin.php?mod=setting', 'fa-cog', 10, 1, 'Y', 'none');
+INSERT INTO `menu` VALUES (28, 0, 'theme', 'admin.php?mod=theme', 'fa-desktop', 11, 1, 'Y', 'none');
 INSERT INTO `menu` VALUES (29, 28, 'alltheme', 'admin.php?mod=theme', '', 1, 1, 'Y', 'none');
 INSERT INTO `menu` VALUES (30, 28, 'addnew', 'admin.php?mod=theme&act=addnew', '', 2, 1, 'Y', 'none');
-INSERT INTO `menu` VALUES (31, 0, 'menumanager', 'admin.php?mod=menumanager', 'fa-sitemap', 11, 1, 'Y', 'none');
-INSERT INTO `menu` VALUES (32, 0, 'component', 'admin.php?mod=component', 'fa-puzzle-piece', 12, 1, 'Y', 'none');
+INSERT INTO `menu` VALUES (31, 0, 'menumanager', 'admin.php?mod=menumanager', 'fa-sitemap', 12, 1, 'Y', 'none');
+INSERT INTO `menu` VALUES (32, 0, 'component', 'admin.php?mod=component', 'fa-puzzle-piece', 13, 1, 'Y', 'none');
 INSERT INTO `menu` VALUES (33, 32, 'allcomponent', 'admin.php?mod=component', '', 1, 1, 'Y', 'none');
 INSERT INTO `menu` VALUES (34, 32, 'addnew', 'admin.php?mod=component&act=addnew', '', 2, 1, 'Y', 'none');
 INSERT INTO `menu` VALUES (42, 0, 'comment', 'admin.php?mod=comment', 'fa-comments', 5, 1, 'Y', 'none');
 INSERT INTO `menu` VALUES (43, 32, 'Galeri', 'admin.php?mod=gallery', '', 3, 1, 'Y', 'none');
 INSERT INTO `menu` VALUES (44, 32, 'Kontak', 'admin.php?mod=contact', '', 4, 1, 'Y', 'none');
-INSERT INTO `menu` VALUES (45, 0, 'user', 'admin.php?mod=user', 'fa-group', 13, 1, 'Y', 'none');
+INSERT INTO `menu` VALUES (45, 0, 'user', 'admin.php?mod=user', 'fa-group', 14, 1, 'Y', 'none');
 INSERT INTO `menu` VALUES (46, 45, 'alluser', 'admin.php?mod=user', '', 1, 1, 'Y', 'none');
 INSERT INTO `menu` VALUES (47, 45, 'addnew', 'admin.php?mod=user&act=addnew', '', 2, 1, 'Y', 'none');
 INSERT INTO `menu` VALUES (48, 0, 'General', './', '', 1, 2, 'Y', 'none');
@@ -285,6 +303,7 @@ INSERT INTO `menu` VALUES (77, 50, 'Pengawasan Bangunan', 'pages/fortofolio-peng
 INSERT INTO `menu` VALUES (78, 50, 'Manajemen Konstruksi', 'pages/fortofolio-manajemen-konstruksi', '', 3, 2, 'Y', 'none');
 INSERT INTO `menu` VALUES (79, 50, 'Evaluasi Asset', 'pages/fortofolio-evaluasi-asset', '', 4, 2, 'Y', 'none');
 INSERT INTO `menu` VALUES (80, 0, 'career', 'admin.php?mod=career', 'fa-linkedin', 8, 1, 'Y', 'none');
+INSERT INTO `menu` VALUES (81, 0, 'careerposition', 'admin.php?mod=careerposition', 'fa-crosshairs', 9, 1, 'Y', 'none');
 COMMIT;
 
 -- ----------------------------
@@ -295,7 +314,7 @@ CREATE TABLE `menu_group` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of menu_group
@@ -663,7 +682,9 @@ INSERT INTO `traffic` VALUES ('172.18.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; I
 INSERT INTO `traffic` VALUES ('172.19.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-18', 4, '1550503730');
 INSERT INTO `traffic` VALUES ('172.21.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-21', 1, '1550763173');
 INSERT INTO `traffic` VALUES ('172.23.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-21', 5, '1550764985');
-INSERT INTO `traffic` VALUES ('172.24.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-23', 11, '1550925262');
+INSERT INTO `traffic` VALUES ('172.24.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-23', 21, '1550940894');
+INSERT INTO `traffic` VALUES ('172.24.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36', 'Apple', '', '', '2019-02-24', 13, '1551010293');
+INSERT INTO `traffic` VALUES ('172.25.0.1', 'Chrome', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36', 'Apple', '', '', '2019-03-07', 29, '1551965974');
 COMMIT;
 
 -- ----------------------------
@@ -715,7 +736,7 @@ CREATE TABLE `users` (
 -- Records of users
 -- ----------------------------
 BEGIN;
-INSERT INTO `users` VALUES (1, 'root', 'cc03e747a6afbbcbf8be7668acfebee5', 'Super Administrator', 'wtnsahyugi.biz@gmail.com', '000-0000-0000', 'No matter how exciting or significant a person\'s life is, a poorly written biography will make it seem like a snore. On the other hand, a good biographer can draw insight from an ordinary life-because they recognize that even the most exciting life is an ordinary life! After all, a biography isn\'t supposed to be a collection of facts assembled in chronological order; it\'s the biographer\'s interpretation of how that life was different and important.', '', '1', 'N', 'c7c1428bd3c3f765af26ea206dcb08d3', '2019-02-11', NULL, '0');
+INSERT INTO `users` VALUES (1, 'root', 'cc03e747a6afbbcbf8be7668acfebee5', 'Super Administrator', 'wtnsahyugi.biz@gmail.com', '000-0000-0000', 'No matter how exciting or significant a person\'s life is, a poorly written biography will make it seem like a snore. On the other hand, a good biographer can draw insight from an ordinary life-because they recognize that even the most exciting life is an ordinary life! After all, a biography isn\'t supposed to be a collection of facts assembled in chronological order; it\'s the biographer\'s interpretation of how that life was different and important.', '', '1', 'N', '09fe59aec63f8be6ff193f517cd8d03c', '2019-02-11', NULL, '0');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
