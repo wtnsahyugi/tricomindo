@@ -143,7 +143,7 @@ class Careerposition extends PoCore
 		if (!empty($_POST)) {
 			$query_career = $this->podb->deleteFrom('career_position')->where('id_career_position', $this->postring->valid($_POST['id'], 'sql'));
 			$query_career->execute();
-			$this->poflash->success($GLOBALS['_']['library_message_2'], 'admin.php?mod=careerposition');
+			$this->poflash->success($GLOBALS['_']['position_message_2'], 'admin.php?mod=careerposition');
 		}
 	}
 
@@ -168,11 +168,58 @@ class Careerposition extends PoCore
 					$query_career = $this->podb->deleteFrom('career_position')->where('id_career_position', $this->postring->valid($item['deldata'], 'sql'));
 					$query_career->execute();
 				}
-				$this->poflash->success($GLOBALS['_']['library_message_2'], 'admin.php?mod=careerposition');
+				$this->poflash->success($GLOBALS['_']['position_message_2'], 'admin.php?mod=careerposition');
 			} else {
-				$this->poflash->error($GLOBALS['_']['library_message_4'], 'admin.php?mod=careerposition');
+				$this->poflash->error($GLOBALS['_']['position_message_4'], 'admin.php?mod=careerposition');
 			}
 		}
+	}
+
+
+	/**
+	 * Fungsi ini digunakan untuk menampilkan dan memproses halaman add career position.
+	 *
+	 * This function is used to display and process add career position page.
+	 *
+	*/
+	public function addnew()
+	{
+		if (!$this->auth($_SESSION['leveluser'], 'career', 'create')) {
+			echo $this->pohtml->error();
+			exit;
+		}
+		if (!empty($_POST)) {
+			$career_position_name = $this->postring->valid($_POST['career_position_name'],'xss');
+			
+			$data = array(
+				'career_position_name' => $career_position_name
+			);
+			$query_tag = $this->podb->insertInto('career_position')->values($data);
+			$query_tag->execute();
+				
+			$this->poflash->success($GLOBALS['_']['position_message_1'], 'admin.php?mod=careerposition');
+		}
+		?>
+		<div class="block-content">
+			<div class="row">
+				<div class="col-md-12">
+					<?=$this->pohtml->headTitle($GLOBALS['_']['position_addnew']);?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<?=$this->pohtml->formStart(array('method' => 'post', 'action' => 'route.php?mod=careerposition&act=addnew', 'autocomplete' => 'off'));?>
+						<div class="row">
+							<div class="col-md-12">
+								<?=$this->pohtml->inputText(array('type' => 'text', 'label' => $GLOBALS['_']['component_name'], 'name' => 'career_position_name', 'id' => 'career_position_name', 'mandatory' => true, 'options' => 'required'));?>
+								<?=$this->pohtml->formAction();?>
+							</div>
+						</div>
+					<?=$this->pohtml->formEnd();?>
+				</div>
+			</div>
+		</div>
+		<?php
 	}
 
 }

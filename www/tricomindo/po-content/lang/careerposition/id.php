@@ -13,9 +13,9 @@
 $_['component_name'] = 'Posisi (Lamaran)';
 $_['career_position_name'] = 'Posisi yang dilamar';
 $_['career_position_action'] = 'Tindakan';
-$_['library_addnew'] = 'Tambah Lamaran';
-$_['library_message_1'] = 'Lamaran telah berhasil ditambahkan';
-$_['library_message_2'] = 'Lamaran telah berhasil dihapus';
-$_['library_message_3'] = 'Kesalahan menambah data lamaran baru';
-$_['library_message_4'] = 'Kesalahan menghapus data lamaran';
+$_['position_addnew'] = 'Tambah Posisi';
+$_['position_message_1'] = 'Posisi telah berhasil ditambahkan';
+$_['position_message_2'] = 'Posisi telah berhasil dihapus';
+$_['position_message_3'] = 'Kesalahan menambah data Posisi baru';
+$_['position_message_4'] = 'Kesalahan menghapus data Posisi';
 
