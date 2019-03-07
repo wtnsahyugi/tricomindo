@@ -32,8 +32,8 @@ $base_root = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] && !in_array(strtol
 $base_url = preg_replace("/\/(index\.php$)/", "", $base_root);
 define('BASE_URL', $base_url);
 
-$dotenv = Dotenv\Dotenv::create(__DIR__);
-$dotenv->load();
+// $dotenv = Dotenv\Dotenv::create(__DIR__);
+// $dotenv->load();
 
 
 /**
