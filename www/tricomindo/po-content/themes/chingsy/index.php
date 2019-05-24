@@ -36,7 +36,7 @@
 	<link rel="stylesheet" href="<?=$this->asset('/css/animate.css')?>" type="text/css" />
 	<link rel="stylesheet" href="<?=$this->asset('/css/magnific-popup.css')?>" type="text/css" />
 	<link rel="stylesheet" href="<?=$this->asset('/css/responsive.css')?>" type="text/css" />
-
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<!-- Favicons -->
 	<link rel="shortcut icon" href="<?=BASE_URL.'/'.DIR_INC;?>/images/favicon.png" />
 

@@ -27,7 +27,7 @@ $cleardb_username = $cleardb_url["user"];
 $cleardb_password = $cleardb_url["pass"];
 $cleardb_db       = substr($cleardb_url["path"],1);
 
-$db['host'] = '172.19.0.2';
+$db['host'] = 'db';
 $db['driver'] = "mysql";
 $db['sock'] = "";
 $db['port'] = "3306";
