@@ -33,7 +33,7 @@ $db['sock'] = "";
 $db['port'] = "3306";
 $db['user'] = 'root';
 $db['passwd'] = 'test';
-$db['db'] = 'tricomindo';
+$db['db'] = 'cms_tricomindo';
 
 define('DATABASE_HOST', $db['host']);
 define('DATABASE_DRIVER', $db['driver']);

@@ -35,9 +35,9 @@ $router->match('GET|POST', '/karir', function() use ($core, $templates) {
 			);
 			if ($resp != null && $resp->success) {
 				$core->poval->validation_rules(array(
-					'career_name' => 'required|max_len,100|min_len,3',
-					'career_position' => 'required|max_len,255|min_len,5',
-					'career_message' => 'required|min_len,5'
+					'career_name' => 'required|max_len,100',
+					'career_position' => 'required|max_len,255',
+					'career_message' => 'required'
 				));
 				$core->poval->filter_rules(array(
 					'career_name' => 'trim|sanitize_string',
