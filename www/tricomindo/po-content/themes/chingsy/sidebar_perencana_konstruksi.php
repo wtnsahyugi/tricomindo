@@ -6,11 +6,10 @@
 		<h4><?=$this->e("Layanan");?></h4>
 		<div class="col_half nobottommargin col_last">
 			<ul>
-				<li><a href="<?=BASE_URL;?>/pages/studi-kawasan-kelayakan">Studi Kawasan & Studi Kelayakan</a></li>
-				<li><a href="<?=BASE_URL;?>/pages/perancangan-bangunan">Perancangan Bangunan</a></li>
-				<li><a href="<?=BASE_URL;?>/pages/pengawasan-bangunan">Pengawasan Bangunan</a></li>
-				<li><a href="<?=BASE_URL;?>/pages/manajemen-konstruksi">Manajemen Konstruksi</a></li>
-				<li><a href="<?=BASE_URL;?>/pages/evaluasi-asset">Evaluasi Asset</a></li>
+				<li><a href="<?=BASE_URL;?>/pages/jasa-perencana-konstruksi">Jasa Perencana Konstruksi</a></li>
+				<li><a href="<?=BASE_URL;?>/pages/jasa-pengawas-konstruksi">Jasa Pengawas Konstruksi</a></li>
+				<li><a href="<?=BASE_URL;?>/pages/manajemen-proyek-konstruksi">Jasa Manajemen Proyek Terkait Konstruksi Bangunan</a></li>
+				<li><a href="<?=BASE_URL;?>/pages/konsultasi-non-konstruksi">Jasa Konsultasi Non Konstruksi</a></li>
 			</ul>
 		</div>
 	</div>

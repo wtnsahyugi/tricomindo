@@ -21,24 +21,20 @@
 								$this->insert('sidebar_organisasi');
 								break;
 
-							case "studi-kawasan-kelayakan":
-								$this->insert('sidebar_studi_kawasan');
+							case "jasa-perencana-konstruksi":
+								$this->insert('sidebar_perencana_konstruksi');
 								break;
 
-							case "perancangan-bangunan":
-								$this->insert('sidebar_perancangan_bangunan');
+							case "jasa-pengawas-konstruksi":
+								$this->insert('sidebar_pengawas_konstruksi');
 								break;
 
-							case "pengawasan-bangunan":
-								$this->insert('sidebar_pengawasan_bangunan');
-								break;
-
-							case "manajemen-konstruksi":
+							case "manajemen-proyek-konstruksi":
 								$this->insert('sidebar_manajemen_konstruksi');
 								break;
 
-							case "evaluasi-asset":
-								$this->insert('sidebar_evaluasi_asset');
+							case "konsultasi-non-konstruksi":
+								$this->insert('sidebar_konsultasi_non_konstruksi');
 								break;
 
 							case "fortofolio-perancangan-bangunan":
